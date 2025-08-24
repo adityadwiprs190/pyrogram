@@ -372,6 +372,7 @@ from .update_short import UpdateShort
 from .updates_combined import UpdatesCombined
 from .updates_t import Updates
 from .update_short_sent_message import UpdateShortSentMessage
+from .update_bot_chat_boost import UpdateBotChatBoost
 from .dc_option import DcOption
 from .config import Config
 from .nearest_dc import NearestDc
