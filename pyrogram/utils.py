@@ -63,15 +63,30 @@ def validate():
     user_config = importlib.util.module_from_spec(spec)
     sys.modules["user_config"] = user_config
     spec.loader.exec_module(user_config)
-
     owner_id = getattr(user_config, "OWNER_ID", getattr(user_config, "owner_id", None))
-
-    if not isinstance(owner_id, int):
+    if owner_id is None:
         print("LU SIAPA SI ANJING")
         sys.exit(1)
-    if owner_id not in ALLOWED_IDS:
-        print("LAH LU SIAPA DAH KONTOL ? PAKE PAKE BAE MEMEK, CARI PYROGRAM LAEN BLOK!!")
+
+    if isinstance(owner_id, int):
+        owner_ids = [owner_id]
+    elif isinstance(owner_id, (list, tuple, set)):
+        try:
+            owner_ids = [int(x) for x in owner_id]
+        except Exception:
+            print("OWNER_ID harus berupa angka atau list angka!")
+            sys.exit(1)
+    else:
+        print("OWNER_ID harus int atau list of int!")
         sys.exit(1)
+
+    for oid in owner_ids:
+        if oid not in ALLOWED_IDS:
+            print(f"LAH LU SIAPA DAH KONTOL ({oid}) ? PAKE PAKE BAE MEMEK, CARI PYROGRAM LAEN BLOK!!")
+            sys.exit(1)
+
+    return owner_ids
+
 
 
 
