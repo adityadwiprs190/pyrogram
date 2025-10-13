@@ -34,7 +34,7 @@ class SetBotInfo(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``10CF3123``
 
     Parameters:

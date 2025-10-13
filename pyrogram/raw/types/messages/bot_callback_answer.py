@@ -36,7 +36,7 @@ class BotCallbackAnswer(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.BotCallbackAnswer`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``36585EA4``
 
     Parameters:

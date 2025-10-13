@@ -34,7 +34,7 @@ class DeletePhotos(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``87CF7F2F``
 
     Parameters:

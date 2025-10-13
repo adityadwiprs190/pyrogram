@@ -36,11 +36,11 @@ class PollAnswer(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PollAnswer`.
 
     Details:
-        - Layer: ``166``
-        - ID: ``6CA9C2E9``
+        - Layer: ``182``
+        - ID: ``FF16E2CA``
 
     Parameters:
-        text (``str``):
+        text (:obj:`TextWithEntities <pyrogram.raw.base.TextWithEntities>`):
             N/A
 
         option (``bytes``):
@@ -50,18 +50,18 @@ class PollAnswer(TLObject):  # type: ignore
 
     __slots__: List[str] = ["text", "option"]
 
-    ID = 0x6ca9c2e9
+    ID = 0xff16e2ca
     QUALNAME = "types.PollAnswer"
 
-    def __init__(self, *, text: str, option: bytes) -> None:
-        self.text = text  # string
+    def __init__(self, *, text: "raw.base.TextWithEntities", option: bytes) -> None:
+        self.text = text  # TextWithEntities
         self.option = option  # bytes
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "PollAnswer":
         # No flags
         
-        text = String.read(b)
+        text = TLObject.read(b)
         
         option = Bytes.read(b)
         
@@ -73,7 +73,7 @@ class PollAnswer(TLObject):  # type: ignore
 
         # No flags
         
-        b.write(String(self.text))
+        b.write(self.text.write())
         
         b.write(Bytes(self.option))
         

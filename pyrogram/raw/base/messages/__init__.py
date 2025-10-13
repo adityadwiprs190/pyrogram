@@ -71,3 +71,10 @@ from .emoji_groups import EmojiGroups
 from .translated_text import TranslatedText
 from .bot_app import BotApp
 from .web_page import WebPage
+from .saved_dialogs import SavedDialogs
+from .saved_reaction_tags import SavedReactionTags
+from .quick_replies import QuickReplies
+from .dialog_filters import DialogFilters
+from .my_stickers import MyStickers
+from .invited_users import InvitedUsers
+from .available_effects import AvailableEffects

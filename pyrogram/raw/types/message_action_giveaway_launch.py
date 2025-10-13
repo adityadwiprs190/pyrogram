@@ -36,7 +36,7 @@ class MessageActionGiveawayLaunch(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageAction`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``332BA9ED``
 
     Parameters:

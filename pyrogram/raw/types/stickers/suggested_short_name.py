@@ -36,7 +36,7 @@ class SuggestedShortName(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.stickers.SuggestedShortName`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``85FEA03F``
 
     Parameters:

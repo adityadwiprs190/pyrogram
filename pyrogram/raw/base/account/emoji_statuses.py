@@ -45,7 +45,7 @@ class EmojiStatuses:  # type: ignore
             account.EmojiStatusesNotModified
 
     Functions:
-        This object can be returned by 2 functions.
+        This object can be returned by 3 functions.
 
         .. currentmodule:: pyrogram.raw.functions
 
@@ -54,6 +54,7 @@ class EmojiStatuses:  # type: ignore
 
             account.GetDefaultEmojiStatuses
             account.GetRecentEmojiStatuses
+            account.GetChannelDefaultEmojiStatuses
     """
 
     QUALNAME = "pyrogram.raw.base.account.EmojiStatuses"

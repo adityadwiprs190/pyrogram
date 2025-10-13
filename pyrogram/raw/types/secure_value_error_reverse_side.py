@@ -36,7 +36,7 @@ class SecureValueErrorReverseSide(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.SecureValueError`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``868A2AA5``
 
     Parameters:

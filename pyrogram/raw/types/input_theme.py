@@ -36,7 +36,7 @@ class InputTheme(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputTheme`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``3C5693E9``
 
     Parameters:

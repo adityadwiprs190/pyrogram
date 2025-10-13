@@ -36,7 +36,7 @@ class PhotoStrippedSize(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PhotoSize`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E0B0BC2E``
 
     Parameters:

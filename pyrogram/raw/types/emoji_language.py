@@ -36,7 +36,7 @@ class EmojiLanguage(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.EmojiLanguage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B3FB5361``
 
     Parameters:

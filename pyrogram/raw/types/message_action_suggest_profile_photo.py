@@ -36,7 +36,7 @@ class MessageActionSuggestProfilePhoto(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageAction`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``57DE635E``
 
     Parameters:

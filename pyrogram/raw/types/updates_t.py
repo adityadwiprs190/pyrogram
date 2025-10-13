@@ -36,7 +36,7 @@ class Updates(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Updates`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``74AE4240``
 
     Parameters:
@@ -56,13 +56,13 @@ class Updates(TLObject):  # type: ignore
             N/A
 
     Functions:
-        This object can be returned by 96 functions.
+        This object can be returned by 103 functions.
 
         .. currentmodule:: pyrogram.raw.functions
 
         .. autosummary::
             :nosignatures:
-            
+
             account.GetNotifyExceptions
             account.UpdateConnectedBot
             account.GetBotBusinessConnection
@@ -108,11 +108,6 @@ class Updates(TLObject):  # type: ignore
             messages.DeleteQuickReplyMessages
             messages.EditFactCheck
             messages.DeleteFactCheck
-            messages.SendPaidReaction
-            messages.GetPaidReactionPrivacy
-            messages.ToggleTodoCompleted
-            messages.AppendTodoList
-            messages.ToggleSuggestedPostApproval
             channels.CreateChannel
             channels.EditAdmin
             channels.EditTitle
@@ -141,17 +136,12 @@ class Updates(TLObject):  # type: ignore
             channels.UpdateEmojiStatus
             channels.SetBoostsToUnblockRestrictions
             channels.RestrictSponsoredMessages
-            channels.UpdatePaidMessagesPrice
-            channels.ToggleAutotranslation
             bots.AllowSendMessage
             payments.AssignAppStoreTransaction
             payments.AssignPlayMarketTransaction
             payments.ApplyGiftCode
             payments.LaunchPrepaidGiveaway
             payments.RefundStarsCharge
-            payments.UpgradeStarGift
-            payments.TransferStarGift
-            payments.UpdateStarGiftPrice
             phone.DiscardCall
             phone.SetCallRating
             phone.CreateGroupCall
@@ -167,12 +157,6 @@ class Updates(TLObject):  # type: ignore
             phone.StartScheduledGroupCall
             phone.JoinGroupCallPresentation
             phone.LeaveGroupCallPresentation
-            phone.CreateConferenceCall
-            phone.DeleteConferenceCallParticipants
-            phone.SendConferenceCallBroadcast
-            phone.InviteConferenceCallParticipant
-            phone.DeclineConferenceCallInvite
-            phone.GetGroupCallChainBlocks
             folders.EditPeerFolders
             chatlists.JoinChatlistInvite
             chatlists.JoinChatlistUpdates

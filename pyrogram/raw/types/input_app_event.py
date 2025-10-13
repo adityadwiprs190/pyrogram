@@ -36,7 +36,7 @@ class InputAppEvent(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputAppEvent`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``1D1B1245``
 
     Parameters:

@@ -34,7 +34,7 @@ class DeleteChatUser(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A2185CAB``
 
     Parameters:

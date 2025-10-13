@@ -34,7 +34,7 @@ class ToggleForum(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A4298B29``
 
     Parameters:

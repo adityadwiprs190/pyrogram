@@ -36,7 +36,7 @@ class KeyboardButtonSimpleWebView(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.KeyboardButton`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A0C0505C``
 
     Parameters:

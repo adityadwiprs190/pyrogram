@@ -36,7 +36,7 @@ class TextAnchor(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.RichText`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``35553762``
 
     Parameters:

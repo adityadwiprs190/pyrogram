@@ -36,7 +36,7 @@ class UpdateEditMessage(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Update`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E40370A3``
 
     Parameters:

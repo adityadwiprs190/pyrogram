@@ -36,8 +36,8 @@ class MessageActionGiftCode(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageAction`.
 
     Details:
-        - Layer: ``166``
-        - ID: ``D2CFDB0E``
+        - Layer: ``182``
+        - ID: ``678C2E09``
 
     Parameters:
         months (``int`` ``32-bit``):
@@ -55,19 +55,35 @@ class MessageActionGiftCode(TLObject):  # type: ignore
         boost_peer (:obj:`Peer <pyrogram.raw.base.Peer>`, *optional*):
             N/A
 
+        currency (``str``, *optional*):
+            N/A
+
+        amount (``int`` ``64-bit``, *optional*):
+            N/A
+
+        crypto_currency (``str``, *optional*):
+            N/A
+
+        crypto_amount (``int`` ``64-bit``, *optional*):
+            N/A
+
     """
 
-    __slots__: List[str] = ["months", "slug", "via_giveaway", "unclaimed", "boost_peer"]
+    __slots__: List[str] = ["months", "slug", "via_giveaway", "unclaimed", "boost_peer", "currency", "amount", "crypto_currency", "crypto_amount"]
 
-    ID = 0xd2cfdb0e
+    ID = 0x678c2e09
     QUALNAME = "types.MessageActionGiftCode"
 
-    def __init__(self, *, months: int, slug: str, via_giveaway: Optional[bool] = None, unclaimed: Optional[bool] = None, boost_peer: "raw.base.Peer" = None) -> None:
+    def __init__(self, *, months: int, slug: str, via_giveaway: Optional[bool] = None, unclaimed: Optional[bool] = None, boost_peer: "raw.base.Peer" = None, currency: Optional[str] = None, amount: Optional[int] = None, crypto_currency: Optional[str] = None, crypto_amount: Optional[int] = None) -> None:
         self.months = months  # int
         self.slug = slug  # string
         self.via_giveaway = via_giveaway  # flags.0?true
         self.unclaimed = unclaimed  # flags.2?true
         self.boost_peer = boost_peer  # flags.1?Peer
+        self.currency = currency  # flags.2?string
+        self.amount = amount  # flags.2?long
+        self.crypto_currency = crypto_currency  # flags.3?string
+        self.crypto_amount = crypto_amount  # flags.3?long
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "MessageActionGiftCode":
@@ -82,7 +98,11 @@ class MessageActionGiftCode(TLObject):  # type: ignore
         
         slug = String.read(b)
         
-        return MessageActionGiftCode(months=months, slug=slug, via_giveaway=via_giveaway, unclaimed=unclaimed, boost_peer=boost_peer)
+        currency = String.read(b) if flags & (1 << 2) else None
+        amount = Long.read(b) if flags & (1 << 2) else None
+        crypto_currency = String.read(b) if flags & (1 << 3) else None
+        crypto_amount = Long.read(b) if flags & (1 << 3) else None
+        return MessageActionGiftCode(months=months, slug=slug, via_giveaway=via_giveaway, unclaimed=unclaimed, boost_peer=boost_peer, currency=currency, amount=amount, crypto_currency=crypto_currency, crypto_amount=crypto_amount)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -92,6 +112,10 @@ class MessageActionGiftCode(TLObject):  # type: ignore
         flags |= (1 << 0) if self.via_giveaway else 0
         flags |= (1 << 2) if self.unclaimed else 0
         flags |= (1 << 1) if self.boost_peer is not None else 0
+        flags |= (1 << 2) if self.currency is not None else 0
+        flags |= (1 << 2) if self.amount is not None else 0
+        flags |= (1 << 3) if self.crypto_currency is not None else 0
+        flags |= (1 << 3) if self.crypto_amount is not None else 0
         b.write(Int(flags))
         
         if self.boost_peer is not None:
@@ -100,5 +124,17 @@ class MessageActionGiftCode(TLObject):  # type: ignore
         b.write(Int(self.months))
         
         b.write(String(self.slug))
+        
+        if self.currency is not None:
+            b.write(String(self.currency))
+        
+        if self.amount is not None:
+            b.write(Long(self.amount))
+        
+        if self.crypto_currency is not None:
+            b.write(String(self.crypto_currency))
+        
+        if self.crypto_amount is not None:
+            b.write(Long(self.crypto_amount))
         
         return b.getvalue()

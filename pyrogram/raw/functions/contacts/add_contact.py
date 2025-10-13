@@ -34,7 +34,7 @@ class AddContact(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E8F463D0``
 
     Parameters:

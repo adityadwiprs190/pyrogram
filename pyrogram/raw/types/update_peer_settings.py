@@ -36,7 +36,7 @@ class UpdatePeerSettings(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Update`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``6A7E7366``
 
     Parameters:

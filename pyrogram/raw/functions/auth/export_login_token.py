@@ -34,7 +34,7 @@ class ExportLoginToken(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B7E085FE``
 
     Parameters:

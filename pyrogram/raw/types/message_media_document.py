@@ -36,7 +36,7 @@ class MessageMediaDocument(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageMedia`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``4CF4D72D``
 
     Parameters:
@@ -44,6 +44,15 @@ class MessageMediaDocument(TLObject):  # type: ignore
             N/A
 
         spoiler (``bool``, *optional*):
+            N/A
+
+        video (``bool``, *optional*):
+            N/A
+
+        round (``bool``, *optional*):
+            N/A
+
+        voice (``bool``, *optional*):
             N/A
 
         document (:obj:`Document <pyrogram.raw.base.Document>`, *optional*):
@@ -68,14 +77,17 @@ class MessageMediaDocument(TLObject):  # type: ignore
             messages.UploadImportedMedia
     """
 
-    __slots__: List[str] = ["nopremium", "spoiler", "document", "alt_document", "ttl_seconds"]
+    __slots__: List[str] = ["nopremium", "spoiler", "video", "round", "voice", "document", "alt_document", "ttl_seconds"]
 
     ID = 0x4cf4d72d
     QUALNAME = "types.MessageMediaDocument"
 
-    def __init__(self, *, nopremium: Optional[bool] = None, spoiler: Optional[bool] = None, document: "raw.base.Document" = None, alt_document: "raw.base.Document" = None, ttl_seconds: Optional[int] = None) -> None:
+    def __init__(self, *, nopremium: Optional[bool] = None, spoiler: Optional[bool] = None, video: Optional[bool] = None, round: Optional[bool] = None, voice: Optional[bool] = None, document: "raw.base.Document" = None, alt_document: "raw.base.Document" = None, ttl_seconds: Optional[int] = None) -> None:
         self.nopremium = nopremium  # flags.3?true
         self.spoiler = spoiler  # flags.4?true
+        self.video = video  # flags.6?true
+        self.round = round  # flags.7?true
+        self.voice = voice  # flags.8?true
         self.document = document  # flags.0?Document
         self.alt_document = alt_document  # flags.5?Document
         self.ttl_seconds = ttl_seconds  # flags.2?int
@@ -87,12 +99,15 @@ class MessageMediaDocument(TLObject):  # type: ignore
         
         nopremium = True if flags & (1 << 3) else False
         spoiler = True if flags & (1 << 4) else False
+        video = True if flags & (1 << 6) else False
+        round = True if flags & (1 << 7) else False
+        voice = True if flags & (1 << 8) else False
         document = TLObject.read(b) if flags & (1 << 0) else None
         
         alt_document = TLObject.read(b) if flags & (1 << 5) else None
         
         ttl_seconds = Int.read(b) if flags & (1 << 2) else None
-        return MessageMediaDocument(nopremium=nopremium, spoiler=spoiler, document=document, alt_document=alt_document, ttl_seconds=ttl_seconds)
+        return MessageMediaDocument(nopremium=nopremium, spoiler=spoiler, video=video, round=round, voice=voice, document=document, alt_document=alt_document, ttl_seconds=ttl_seconds)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -101,6 +116,9 @@ class MessageMediaDocument(TLObject):  # type: ignore
         flags = 0
         flags |= (1 << 3) if self.nopremium else 0
         flags |= (1 << 4) if self.spoiler else 0
+        flags |= (1 << 6) if self.video else 0
+        flags |= (1 << 7) if self.round else 0
+        flags |= (1 << 8) if self.voice else 0
         flags |= (1 << 0) if self.document is not None else 0
         flags |= (1 << 5) if self.alt_document is not None else 0
         flags |= (1 << 2) if self.ttl_seconds is not None else 0

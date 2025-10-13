@@ -36,7 +36,7 @@ class PhoneCallDiscardReasonHangup(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PhoneCallDiscardReason`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``57ADC690``
 
     Parameters:

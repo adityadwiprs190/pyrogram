@@ -36,7 +36,7 @@ class WebPage(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.WebPage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E89C45B2``
 
     Parameters:

@@ -36,7 +36,7 @@ class InputMediaUploadedDocument(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputMedia`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``5B38C6C1``
 
     Parameters:

@@ -36,7 +36,7 @@ class EncryptedChatEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.EncryptedChat`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``AB7EC0A0``
 
     Parameters:

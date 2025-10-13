@@ -47,7 +47,7 @@ class Messages:  # type: ignore
             messages.MessagesSlice
 
     Functions:
-        This object can be returned by 13 functions.
+        This object can be returned by 15 functions.
 
         .. currentmodule:: pyrogram.raw.functions
 
@@ -65,8 +65,10 @@ class Messages:  # type: ignore
             messages.GetReplies
             messages.GetUnreadReactions
             messages.SearchSentMedia
+            messages.GetSavedHistory
+            messages.GetQuickReplyMessages
             channels.GetMessages
-            stats.GetMessagePublicForwards
+            channels.SearchPosts
     """
 
     QUALNAME = "pyrogram.raw.base.messages.Messages"

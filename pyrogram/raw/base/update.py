@@ -26,7 +26,7 @@ from typing import Union
 from pyrogram import raw
 from pyrogram.raw.core import TLObject
 
-Update = Union[raw.types.UpdateAttachMenuBots, raw.types.UpdateAutoSaveSettings, raw.types.UpdateBotCallbackQuery, raw.types.UpdateBotChatInviteRequester, raw.types.UpdateBotCommands, raw.types.UpdateBotInlineQuery, raw.types.UpdateBotInlineSend, raw.types.UpdateBotMenuButton, raw.types.UpdateBotPrecheckoutQuery, raw.types.UpdateBotShippingQuery, raw.types.UpdateBotStopped, raw.types.UpdateBotWebhookJSON, raw.types.UpdateBotWebhookJSONQuery, raw.types.UpdateChannel, raw.types.UpdateChannelAvailableMessages, raw.types.UpdateChannelMessageForwards, raw.types.UpdateChannelMessageViews, raw.types.UpdateChannelParticipant, raw.types.UpdateChannelPinnedTopic, raw.types.UpdateChannelPinnedTopics, raw.types.UpdateChannelReadMessagesContents, raw.types.UpdateChannelTooLong, raw.types.UpdateChannelUserTyping, raw.types.UpdateChannelWebPage, raw.types.UpdateChat, raw.types.UpdateChatDefaultBannedRights, raw.types.UpdateChatParticipant, raw.types.UpdateChatParticipantAdd, raw.types.UpdateChatParticipantAdmin, raw.types.UpdateChatParticipantDelete, raw.types.UpdateChatParticipants, raw.types.UpdateChatUserTyping, raw.types.UpdateConfig, raw.types.UpdateContactsReset, raw.types.UpdateDcOptions, raw.types.UpdateDeleteChannelMessages, raw.types.UpdateDeleteMessages, raw.types.UpdateDeleteScheduledMessages, raw.types.UpdateDialogFilter, raw.types.UpdateDialogFilterOrder, raw.types.UpdateDialogFilters, raw.types.UpdateDialogPinned, raw.types.UpdateDialogUnreadMark, raw.types.UpdateDraftMessage, raw.types.UpdateEditChannelMessage, raw.types.UpdateEditMessage, raw.types.UpdateEncryptedChatTyping, raw.types.UpdateEncryptedMessagesRead, raw.types.UpdateEncryption, raw.types.UpdateFavedStickers, raw.types.UpdateFolderPeers, raw.types.UpdateGeoLiveViewed, raw.types.UpdateGroupCall, raw.types.UpdateGroupCallConnection, raw.types.UpdateGroupCallParticipants, raw.types.UpdateGroupInvitePrivacyForbidden, raw.types.UpdateInlineBotCallbackQuery, raw.types.UpdateLangPack, raw.types.UpdateLangPackTooLong, raw.types.UpdateLoginToken, raw.types.UpdateMessageExtendedMedia, raw.types.UpdateMessageID, raw.types.UpdateMessagePoll, raw.types.UpdateMessagePollVote, raw.types.UpdateMessageReactions, raw.types.UpdateMoveStickerSetToTop, raw.types.UpdateNewAuthorization, raw.types.UpdateNewChannelMessage, raw.types.UpdateNewEncryptedMessage, raw.types.UpdateNewMessage, raw.types.UpdateNewScheduledMessage, raw.types.UpdateNewStickerSet, raw.types.UpdateNotifySettings, raw.types.UpdatePeerBlocked, raw.types.UpdatePeerHistoryTTL, raw.types.UpdatePeerLocated, raw.types.UpdatePeerSettings, raw.types.UpdatePendingJoinRequests, raw.types.UpdatePhoneCall, raw.types.UpdatePhoneCallSignalingData, raw.types.UpdatePinnedChannelMessages, raw.types.UpdatePinnedDialogs, raw.types.UpdatePinnedMessages, raw.types.UpdatePrivacy, raw.types.UpdatePtsChanged, raw.types.UpdateReadChannelDiscussionInbox, raw.types.UpdateReadChannelDiscussionOutbox, raw.types.UpdateReadChannelInbox, raw.types.UpdateReadChannelOutbox, raw.types.UpdateReadFeaturedEmojiStickers, raw.types.UpdateReadFeaturedStickers, raw.types.UpdateReadHistoryInbox, raw.types.UpdateReadHistoryOutbox, raw.types.UpdateReadMessagesContents, raw.types.UpdateReadStories, raw.types.UpdateRecentEmojiStatuses, raw.types.UpdateRecentReactions, raw.types.UpdateRecentStickers, raw.types.UpdateSavedGifs, raw.types.UpdateSavedRingtones, raw.types.UpdateSentStoryReaction, raw.types.UpdateServiceNotification, raw.types.UpdateStickerSets, raw.types.UpdateStickerSetsOrder, raw.types.UpdateStoriesStealthMode, raw.types.UpdateStory, raw.types.UpdateStoryID, raw.types.UpdateTheme, raw.types.UpdateTranscribedAudio, raw.types.UpdateUser, raw.types.UpdateUserEmojiStatus, raw.types.UpdateUserName, raw.types.UpdateUserPhone, raw.types.UpdateUserStatus, raw.types.UpdateUserTyping, raw.types.UpdateWebPage, raw.types.UpdateWebViewResultSent]
+Update = Union[raw.types.UpdateAttachMenuBots, raw.types.UpdateAutoSaveSettings, raw.types.UpdateBotBusinessConnect, raw.types.UpdateBotCallbackQuery, raw.types.UpdateBotChatBoost, raw.types.UpdateBotChatInviteRequester, raw.types.UpdateBotCommands, raw.types.UpdateBotDeleteBusinessMessage, raw.types.UpdateBotEditBusinessMessage, raw.types.UpdateBotInlineQuery, raw.types.UpdateBotInlineSend, raw.types.UpdateBotMenuButton, raw.types.UpdateBotMessageReaction, raw.types.UpdateBotMessageReactions, raw.types.UpdateBotNewBusinessMessage, raw.types.UpdateBotPrecheckoutQuery, raw.types.UpdateBotShippingQuery, raw.types.UpdateBotStopped, raw.types.UpdateBotWebhookJSON, raw.types.UpdateBotWebhookJSONQuery, raw.types.UpdateBroadcastRevenueTransactions, raw.types.UpdateBusinessBotCallbackQuery, raw.types.UpdateChannel, raw.types.UpdateChannelAvailableMessages, raw.types.UpdateChannelMessageForwards, raw.types.UpdateChannelMessageViews, raw.types.UpdateChannelParticipant, raw.types.UpdateChannelPinnedTopic, raw.types.UpdateChannelPinnedTopics, raw.types.UpdateChannelReadMessagesContents, raw.types.UpdateChannelTooLong, raw.types.UpdateChannelUserTyping, raw.types.UpdateChannelViewForumAsMessages, raw.types.UpdateChannelWebPage, raw.types.UpdateChat, raw.types.UpdateChatDefaultBannedRights, raw.types.UpdateChatParticipant, raw.types.UpdateChatParticipantAdd, raw.types.UpdateChatParticipantAdmin, raw.types.UpdateChatParticipantDelete, raw.types.UpdateChatParticipants, raw.types.UpdateChatUserTyping, raw.types.UpdateConfig, raw.types.UpdateContactsReset, raw.types.UpdateDcOptions, raw.types.UpdateDeleteChannelMessages, raw.types.UpdateDeleteMessages, raw.types.UpdateDeleteQuickReply, raw.types.UpdateDeleteQuickReplyMessages, raw.types.UpdateDeleteScheduledMessages, raw.types.UpdateDialogFilter, raw.types.UpdateDialogFilterOrder, raw.types.UpdateDialogFilters, raw.types.UpdateDialogPinned, raw.types.UpdateDialogUnreadMark, raw.types.UpdateDraftMessage, raw.types.UpdateEditChannelMessage, raw.types.UpdateEditMessage, raw.types.UpdateEncryptedChatTyping, raw.types.UpdateEncryptedMessagesRead, raw.types.UpdateEncryption, raw.types.UpdateFavedStickers, raw.types.UpdateFolderPeers, raw.types.UpdateGeoLiveViewed, raw.types.UpdateGroupCall, raw.types.UpdateGroupCallConnection, raw.types.UpdateGroupCallParticipants, raw.types.UpdateInlineBotCallbackQuery, raw.types.UpdateLangPack, raw.types.UpdateLangPackTooLong, raw.types.UpdateLoginToken, raw.types.UpdateMessageExtendedMedia, raw.types.UpdateMessageID, raw.types.UpdateMessagePoll, raw.types.UpdateMessagePollVote, raw.types.UpdateMessageReactions, raw.types.UpdateMoveStickerSetToTop, raw.types.UpdateNewAuthorization, raw.types.UpdateNewChannelMessage, raw.types.UpdateNewEncryptedMessage, raw.types.UpdateNewMessage, raw.types.UpdateNewQuickReply, raw.types.UpdateNewScheduledMessage, raw.types.UpdateNewStickerSet, raw.types.UpdateNewStoryReaction, raw.types.UpdateNotifySettings, raw.types.UpdatePeerBlocked, raw.types.UpdatePeerHistoryTTL, raw.types.UpdatePeerLocated, raw.types.UpdatePeerSettings, raw.types.UpdatePeerWallpaper, raw.types.UpdatePendingJoinRequests, raw.types.UpdatePhoneCall, raw.types.UpdatePhoneCallSignalingData, raw.types.UpdatePinnedChannelMessages, raw.types.UpdatePinnedDialogs, raw.types.UpdatePinnedMessages, raw.types.UpdatePinnedSavedDialogs, raw.types.UpdatePrivacy, raw.types.UpdatePtsChanged, raw.types.UpdateQuickReplies, raw.types.UpdateQuickReplyMessage, raw.types.UpdateReadChannelDiscussionInbox, raw.types.UpdateReadChannelDiscussionOutbox, raw.types.UpdateReadChannelInbox, raw.types.UpdateReadChannelOutbox, raw.types.UpdateReadFeaturedEmojiStickers, raw.types.UpdateReadFeaturedStickers, raw.types.UpdateReadHistoryInbox, raw.types.UpdateReadHistoryOutbox, raw.types.UpdateReadMessagesContents, raw.types.UpdateReadStories, raw.types.UpdateRecentEmojiStatuses, raw.types.UpdateRecentReactions, raw.types.UpdateRecentStickers, raw.types.UpdateSavedDialogPinned, raw.types.UpdateSavedGifs, raw.types.UpdateSavedReactionTags, raw.types.UpdateSavedRingtones, raw.types.UpdateSentStoryReaction, raw.types.UpdateServiceNotification, raw.types.UpdateSmsJob, raw.types.UpdateStarsBalance, raw.types.UpdateStarsRevenueStatus, raw.types.UpdateStickerSets, raw.types.UpdateStickerSetsOrder, raw.types.UpdateStoriesStealthMode, raw.types.UpdateStory, raw.types.UpdateStoryID, raw.types.UpdateTheme, raw.types.UpdateTranscribedAudio, raw.types.UpdateUser, raw.types.UpdateUserEmojiStatus, raw.types.UpdateUserName, raw.types.UpdateUserPhone, raw.types.UpdateUserStatus, raw.types.UpdateUserTyping, raw.types.UpdateWebPage, raw.types.UpdateWebViewResultSent]
 
 
 # noinspection PyRedeclaration
@@ -34,7 +34,7 @@ class Update:  # type: ignore
     """Telegram API base type.
 
     Constructors:
-        This base type has 117 constructors available.
+        This base type has 139 constructors available.
 
         .. currentmodule:: pyrogram.raw.types
 
@@ -43,17 +43,26 @@ class Update:  # type: ignore
 
             UpdateAttachMenuBots
             UpdateAutoSaveSettings
+            UpdateBotBusinessConnect
             UpdateBotCallbackQuery
+            UpdateBotChatBoost
             UpdateBotChatInviteRequester
             UpdateBotCommands
+            UpdateBotDeleteBusinessMessage
+            UpdateBotEditBusinessMessage
             UpdateBotInlineQuery
             UpdateBotInlineSend
             UpdateBotMenuButton
+            UpdateBotMessageReaction
+            UpdateBotMessageReactions
+            UpdateBotNewBusinessMessage
             UpdateBotPrecheckoutQuery
             UpdateBotShippingQuery
             UpdateBotStopped
             UpdateBotWebhookJSON
             UpdateBotWebhookJSONQuery
+            UpdateBroadcastRevenueTransactions
+            UpdateBusinessBotCallbackQuery
             UpdateChannel
             UpdateChannelAvailableMessages
             UpdateChannelMessageForwards
@@ -64,6 +73,7 @@ class Update:  # type: ignore
             UpdateChannelReadMessagesContents
             UpdateChannelTooLong
             UpdateChannelUserTyping
+            UpdateChannelViewForumAsMessages
             UpdateChannelWebPage
             UpdateChat
             UpdateChatDefaultBannedRights
@@ -78,6 +88,8 @@ class Update:  # type: ignore
             UpdateDcOptions
             UpdateDeleteChannelMessages
             UpdateDeleteMessages
+            UpdateDeleteQuickReply
+            UpdateDeleteQuickReplyMessages
             UpdateDeleteScheduledMessages
             UpdateDialogFilter
             UpdateDialogFilterOrder
@@ -96,7 +108,6 @@ class Update:  # type: ignore
             UpdateGroupCall
             UpdateGroupCallConnection
             UpdateGroupCallParticipants
-            UpdateGroupInvitePrivacyForbidden
             UpdateInlineBotCallbackQuery
             UpdateLangPack
             UpdateLangPackTooLong
@@ -111,21 +122,27 @@ class Update:  # type: ignore
             UpdateNewChannelMessage
             UpdateNewEncryptedMessage
             UpdateNewMessage
+            UpdateNewQuickReply
             UpdateNewScheduledMessage
             UpdateNewStickerSet
+            UpdateNewStoryReaction
             UpdateNotifySettings
             UpdatePeerBlocked
             UpdatePeerHistoryTTL
             UpdatePeerLocated
             UpdatePeerSettings
+            UpdatePeerWallpaper
             UpdatePendingJoinRequests
             UpdatePhoneCall
             UpdatePhoneCallSignalingData
             UpdatePinnedChannelMessages
             UpdatePinnedDialogs
             UpdatePinnedMessages
+            UpdatePinnedSavedDialogs
             UpdatePrivacy
             UpdatePtsChanged
+            UpdateQuickReplies
+            UpdateQuickReplyMessage
             UpdateReadChannelDiscussionInbox
             UpdateReadChannelDiscussionOutbox
             UpdateReadChannelInbox
@@ -139,10 +156,15 @@ class Update:  # type: ignore
             UpdateRecentEmojiStatuses
             UpdateRecentReactions
             UpdateRecentStickers
+            UpdateSavedDialogPinned
             UpdateSavedGifs
+            UpdateSavedReactionTags
             UpdateSavedRingtones
             UpdateSentStoryReaction
             UpdateServiceNotification
+            UpdateSmsJob
+            UpdateStarsBalance
+            UpdateStarsRevenueStatus
             UpdateStickerSets
             UpdateStickerSetsOrder
             UpdateStoriesStealthMode

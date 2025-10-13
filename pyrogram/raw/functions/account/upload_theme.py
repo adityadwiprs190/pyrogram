@@ -34,7 +34,7 @@ class UploadTheme(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``1C3DB333``
 
     Parameters:

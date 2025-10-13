@@ -36,7 +36,7 @@ class MessageReactions(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageReactions`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``4F2B9479``
 
     Parameters:
@@ -49,20 +49,24 @@ class MessageReactions(TLObject):  # type: ignore
         can_see_list (``bool``, *optional*):
             N/A
 
+        reactions_as_tags (``bool``, *optional*):
+            N/A
+
         recent_reactions (List of :obj:`MessagePeerReaction <pyrogram.raw.base.MessagePeerReaction>`, *optional*):
             N/A
 
     """
 
-    __slots__: List[str] = ["results", "min", "can_see_list", "recent_reactions"]
+    __slots__: List[str] = ["results", "min", "can_see_list", "reactions_as_tags", "recent_reactions"]
 
     ID = 0x4f2b9479
     QUALNAME = "types.MessageReactions"
 
-    def __init__(self, *, results: List["raw.base.ReactionCount"], min: Optional[bool] = None, can_see_list: Optional[bool] = None, recent_reactions: Optional[List["raw.base.MessagePeerReaction"]] = None) -> None:
+    def __init__(self, *, results: List["raw.base.ReactionCount"], min: Optional[bool] = None, can_see_list: Optional[bool] = None, reactions_as_tags: Optional[bool] = None, recent_reactions: Optional[List["raw.base.MessagePeerReaction"]] = None) -> None:
         self.results = results  # Vector<ReactionCount>
         self.min = min  # flags.0?true
         self.can_see_list = can_see_list  # flags.2?true
+        self.reactions_as_tags = reactions_as_tags  # flags.3?true
         self.recent_reactions = recent_reactions  # flags.1?Vector<MessagePeerReaction>
 
     @staticmethod
@@ -72,11 +76,12 @@ class MessageReactions(TLObject):  # type: ignore
         
         min = True if flags & (1 << 0) else False
         can_see_list = True if flags & (1 << 2) else False
+        reactions_as_tags = True if flags & (1 << 3) else False
         results = TLObject.read(b)
         
         recent_reactions = TLObject.read(b) if flags & (1 << 1) else []
         
-        return MessageReactions(results=results, min=min, can_see_list=can_see_list, recent_reactions=recent_reactions)
+        return MessageReactions(results=results, min=min, can_see_list=can_see_list, reactions_as_tags=reactions_as_tags, recent_reactions=recent_reactions)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -85,6 +90,7 @@ class MessageReactions(TLObject):  # type: ignore
         flags = 0
         flags |= (1 << 0) if self.min else 0
         flags |= (1 << 2) if self.can_see_list else 0
+        flags |= (1 << 3) if self.reactions_as_tags else 0
         flags |= (1 << 1) if self.recent_reactions else 0
         b.write(Int(flags))
         

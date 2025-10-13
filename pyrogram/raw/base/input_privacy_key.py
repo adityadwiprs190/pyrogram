@@ -26,7 +26,7 @@ from typing import Union
 from pyrogram import raw
 from pyrogram.raw.core import TLObject
 
-InputPrivacyKey = Union[raw.types.InputPrivacyKeyAbout, raw.types.InputPrivacyKeyAddedByPhone, raw.types.InputPrivacyKeyChatInvite, raw.types.InputPrivacyKeyForwards, raw.types.InputPrivacyKeyPhoneCall, raw.types.InputPrivacyKeyPhoneNumber, raw.types.InputPrivacyKeyPhoneP2P, raw.types.InputPrivacyKeyProfilePhoto, raw.types.InputPrivacyKeyStatusTimestamp, raw.types.InputPrivacyKeyVoiceMessages]
+InputPrivacyKey = Union[raw.types.InputPrivacyKeyAbout, raw.types.InputPrivacyKeyAddedByPhone, raw.types.InputPrivacyKeyBirthday, raw.types.InputPrivacyKeyChatInvite, raw.types.InputPrivacyKeyForwards, raw.types.InputPrivacyKeyPhoneCall, raw.types.InputPrivacyKeyPhoneNumber, raw.types.InputPrivacyKeyPhoneP2P, raw.types.InputPrivacyKeyProfilePhoto, raw.types.InputPrivacyKeyStatusTimestamp, raw.types.InputPrivacyKeyVoiceMessages]
 
 
 # noinspection PyRedeclaration
@@ -34,7 +34,7 @@ class InputPrivacyKey:  # type: ignore
     """Telegram API base type.
 
     Constructors:
-        This base type has 10 constructors available.
+        This base type has 11 constructors available.
 
         .. currentmodule:: pyrogram.raw.types
 
@@ -43,6 +43,7 @@ class InputPrivacyKey:  # type: ignore
 
             InputPrivacyKeyAbout
             InputPrivacyKeyAddedByPhone
+            InputPrivacyKeyBirthday
             InputPrivacyKeyChatInvite
             InputPrivacyKeyForwards
             InputPrivacyKeyPhoneCall

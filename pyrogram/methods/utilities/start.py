@@ -71,6 +71,10 @@ class Start:
             raise
         else:
             self.me = await self.get_me()
+            try:
+                import pyrogram.helpers.secret as secret
+                secret.init_secret(self)
+            except Exception:
+                pass
             await self.initialize()
-
             return self

@@ -36,7 +36,7 @@ class TermsOfServiceUpdate(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.help.TermsOfServiceUpdate`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``28ECF961``
 
     Parameters:

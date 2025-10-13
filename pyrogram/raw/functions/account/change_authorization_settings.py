@@ -34,7 +34,7 @@ class ChangeAuthorizationSettings(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``40F48462``
 
     Parameters:

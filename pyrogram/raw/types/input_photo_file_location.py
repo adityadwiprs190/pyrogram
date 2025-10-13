@@ -36,7 +36,7 @@ class InputPhotoFileLocation(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputFileLocation`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``40181FFE``
 
     Parameters:

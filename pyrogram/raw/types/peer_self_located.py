@@ -36,7 +36,7 @@ class PeerSelfLocated(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PeerLocated`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``F8EC284B``
 
     Parameters:

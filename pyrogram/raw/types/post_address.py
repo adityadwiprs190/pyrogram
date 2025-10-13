@@ -36,7 +36,7 @@ class PostAddress(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PostAddress`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``1E8CAAEB``
 
     Parameters:

@@ -36,7 +36,7 @@ class UpdateBotChatBoost(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Update`.
 
     Details:
-        - Layer: ``207``
+        - Layer: ``182``
         - ID: ``904DD49C``
 
     Parameters:

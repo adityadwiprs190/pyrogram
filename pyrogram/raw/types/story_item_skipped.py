@@ -36,7 +36,7 @@ class StoryItemSkipped(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.StoryItem`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``FFADC913``
 
     Parameters:

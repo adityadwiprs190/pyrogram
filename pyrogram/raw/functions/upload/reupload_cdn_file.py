@@ -34,7 +34,7 @@ class ReuploadCdnFile(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``9B2754A8``
 
     Parameters:

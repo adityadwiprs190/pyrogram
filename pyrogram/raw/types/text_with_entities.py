@@ -36,7 +36,7 @@ class TextWithEntities(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.TextWithEntities`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``751F3146``
 
     Parameters:

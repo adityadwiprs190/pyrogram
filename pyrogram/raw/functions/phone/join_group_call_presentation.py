@@ -34,7 +34,7 @@ class JoinGroupCallPresentation(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``CBEA6BC4``
 
     Parameters:

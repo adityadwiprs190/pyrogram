@@ -26,7 +26,7 @@ from typing import Union
 from pyrogram import raw
 from pyrogram.raw.core import TLObject
 
-InputStorePaymentPurpose = Union[raw.types.InputStorePaymentGiftPremium, raw.types.InputStorePaymentPremiumGiftCode, raw.types.InputStorePaymentPremiumGiveaway, raw.types.InputStorePaymentPremiumSubscription]
+InputStorePaymentPurpose = Union[raw.types.InputStorePaymentGiftPremium, raw.types.InputStorePaymentPremiumGiftCode, raw.types.InputStorePaymentPremiumGiveaway, raw.types.InputStorePaymentPremiumSubscription, raw.types.InputStorePaymentStars]
 
 
 # noinspection PyRedeclaration
@@ -34,7 +34,7 @@ class InputStorePaymentPurpose:  # type: ignore
     """Telegram API base type.
 
     Constructors:
-        This base type has 4 constructors available.
+        This base type has 5 constructors available.
 
         .. currentmodule:: pyrogram.raw.types
 
@@ -45,6 +45,7 @@ class InputStorePaymentPurpose:  # type: ignore
             InputStorePaymentPremiumGiftCode
             InputStorePaymentPremiumGiveaway
             InputStorePaymentPremiumSubscription
+            InputStorePaymentStars
     """
 
     QUALNAME = "pyrogram.raw.base.InputStorePaymentPurpose"

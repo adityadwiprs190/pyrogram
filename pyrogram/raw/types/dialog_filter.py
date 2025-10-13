@@ -36,8 +36,8 @@ class DialogFilter(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.DialogFilter`.
 
     Details:
-        - Layer: ``166``
-        - ID: ``7438F7E8``
+        - Layer: ``182``
+        - ID: ``5FB5523B``
 
     Parameters:
         id (``int`` ``32-bit``):
@@ -82,23 +82,17 @@ class DialogFilter(TLObject):  # type: ignore
         emoticon (``str``, *optional*):
             N/A
 
-    Functions:
-        This object can be returned by 1 function.
+        color (``int`` ``32-bit``, *optional*):
+            N/A
 
-        .. currentmodule:: pyrogram.raw.functions
-
-        .. autosummary::
-            :nosignatures:
-
-            messages.GetDialogFilters
     """
 
-    __slots__: List[str] = ["id", "title", "pinned_peers", "include_peers", "exclude_peers", "contacts", "non_contacts", "groups", "broadcasts", "bots", "exclude_muted", "exclude_read", "exclude_archived", "emoticon"]
+    __slots__: List[str] = ["id", "title", "pinned_peers", "include_peers", "exclude_peers", "contacts", "non_contacts", "groups", "broadcasts", "bots", "exclude_muted", "exclude_read", "exclude_archived", "emoticon", "color"]
 
-    ID = 0x7438f7e8
+    ID = 0x5fb5523b
     QUALNAME = "types.DialogFilter"
 
-    def __init__(self, *, id: int, title: str, pinned_peers: List["raw.base.InputPeer"], include_peers: List["raw.base.InputPeer"], exclude_peers: List["raw.base.InputPeer"], contacts: Optional[bool] = None, non_contacts: Optional[bool] = None, groups: Optional[bool] = None, broadcasts: Optional[bool] = None, bots: Optional[bool] = None, exclude_muted: Optional[bool] = None, exclude_read: Optional[bool] = None, exclude_archived: Optional[bool] = None, emoticon: Optional[str] = None) -> None:
+    def __init__(self, *, id: int, title: str, pinned_peers: List["raw.base.InputPeer"], include_peers: List["raw.base.InputPeer"], exclude_peers: List["raw.base.InputPeer"], contacts: Optional[bool] = None, non_contacts: Optional[bool] = None, groups: Optional[bool] = None, broadcasts: Optional[bool] = None, bots: Optional[bool] = None, exclude_muted: Optional[bool] = None, exclude_read: Optional[bool] = None, exclude_archived: Optional[bool] = None, emoticon: Optional[str] = None, color: Optional[int] = None) -> None:
         self.id = id  # int
         self.title = title  # string
         self.pinned_peers = pinned_peers  # Vector<InputPeer>
@@ -113,6 +107,7 @@ class DialogFilter(TLObject):  # type: ignore
         self.exclude_read = exclude_read  # flags.12?true
         self.exclude_archived = exclude_archived  # flags.13?true
         self.emoticon = emoticon  # flags.25?string
+        self.color = color  # flags.27?int
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "DialogFilter":
@@ -132,13 +127,14 @@ class DialogFilter(TLObject):  # type: ignore
         title = String.read(b)
         
         emoticon = String.read(b) if flags & (1 << 25) else None
+        color = Int.read(b) if flags & (1 << 27) else None
         pinned_peers = TLObject.read(b)
         
         include_peers = TLObject.read(b)
         
         exclude_peers = TLObject.read(b)
         
-        return DialogFilter(id=id, title=title, pinned_peers=pinned_peers, include_peers=include_peers, exclude_peers=exclude_peers, contacts=contacts, non_contacts=non_contacts, groups=groups, broadcasts=broadcasts, bots=bots, exclude_muted=exclude_muted, exclude_read=exclude_read, exclude_archived=exclude_archived, emoticon=emoticon)
+        return DialogFilter(id=id, title=title, pinned_peers=pinned_peers, include_peers=include_peers, exclude_peers=exclude_peers, contacts=contacts, non_contacts=non_contacts, groups=groups, broadcasts=broadcasts, bots=bots, exclude_muted=exclude_muted, exclude_read=exclude_read, exclude_archived=exclude_archived, emoticon=emoticon, color=color)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -154,6 +150,7 @@ class DialogFilter(TLObject):  # type: ignore
         flags |= (1 << 12) if self.exclude_read else 0
         flags |= (1 << 13) if self.exclude_archived else 0
         flags |= (1 << 25) if self.emoticon is not None else 0
+        flags |= (1 << 27) if self.color is not None else 0
         b.write(Int(flags))
         
         b.write(Int(self.id))
@@ -162,6 +159,9 @@ class DialogFilter(TLObject):  # type: ignore
         
         if self.emoticon is not None:
             b.write(String(self.emoticon))
+        
+        if self.color is not None:
+            b.write(Int(self.color))
         
         b.write(Vector(self.pinned_peers))
         

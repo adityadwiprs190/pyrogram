@@ -36,14 +36,14 @@ class Poll(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Poll`.
 
     Details:
-        - Layer: ``166``
-        - ID: ``86E18161``
+        - Layer: ``182``
+        - ID: ``58747131``
 
     Parameters:
         id (``int`` ``64-bit``):
             N/A
 
-        question (``str``):
+        question (:obj:`TextWithEntities <pyrogram.raw.base.TextWithEntities>`):
             N/A
 
         answers (List of :obj:`PollAnswer <pyrogram.raw.base.PollAnswer>`):
@@ -71,12 +71,12 @@ class Poll(TLObject):  # type: ignore
 
     __slots__: List[str] = ["id", "question", "answers", "closed", "public_voters", "multiple_choice", "quiz", "close_period", "close_date"]
 
-    ID = 0x86e18161
+    ID = 0x58747131
     QUALNAME = "types.Poll"
 
-    def __init__(self, *, id: int, question: str, answers: List["raw.base.PollAnswer"], closed: Optional[bool] = None, public_voters: Optional[bool] = None, multiple_choice: Optional[bool] = None, quiz: Optional[bool] = None, close_period: Optional[int] = None, close_date: Optional[int] = None) -> None:
+    def __init__(self, *, id: int, question: "raw.base.TextWithEntities", answers: List["raw.base.PollAnswer"], closed: Optional[bool] = None, public_voters: Optional[bool] = None, multiple_choice: Optional[bool] = None, quiz: Optional[bool] = None, close_period: Optional[int] = None, close_date: Optional[int] = None) -> None:
         self.id = id  # long
-        self.question = question  # string
+        self.question = question  # TextWithEntities
         self.answers = answers  # Vector<PollAnswer>
         self.closed = closed  # flags.0?true
         self.public_voters = public_voters  # flags.1?true
@@ -96,7 +96,7 @@ class Poll(TLObject):  # type: ignore
         public_voters = True if flags & (1 << 1) else False
         multiple_choice = True if flags & (1 << 2) else False
         quiz = True if flags & (1 << 3) else False
-        question = String.read(b)
+        question = TLObject.read(b)
         
         answers = TLObject.read(b)
         
@@ -119,7 +119,7 @@ class Poll(TLObject):  # type: ignore
         flags |= (1 << 5) if self.close_date is not None else 0
         b.write(Int(flags))
         
-        b.write(String(self.question))
+        b.write(self.question.write())
         
         b.write(Vector(self.answers))
         

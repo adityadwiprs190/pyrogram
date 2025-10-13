@@ -34,7 +34,7 @@ class SetClientDHParams(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``F5045F1F``
 
     Parameters:

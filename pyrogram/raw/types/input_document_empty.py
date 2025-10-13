@@ -36,7 +36,7 @@ class InputDocumentEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputDocument`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``72F0EAAE``
 
     Parameters:

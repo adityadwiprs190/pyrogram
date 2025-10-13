@@ -34,7 +34,7 @@ class GetMessages(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``63C66506``
 
     Parameters:

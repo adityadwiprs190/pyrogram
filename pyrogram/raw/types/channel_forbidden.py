@@ -36,7 +36,7 @@ class ChannelForbidden(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Chat`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``17D493D5``
 
     Parameters:

@@ -36,7 +36,7 @@ class MessageActionGiftPremium(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageAction`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``C83D6AEC``
 
     Parameters:

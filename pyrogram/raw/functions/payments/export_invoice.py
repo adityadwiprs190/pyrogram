@@ -34,7 +34,7 @@ class ExportInvoice(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``F91B065``
 
     Parameters:

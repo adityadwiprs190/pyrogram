@@ -28,7 +28,9 @@ from .password import Password
 from .premium import Premium
 from .users import Users
 from .stories import Stories
+from .stickers import Stickers
 from .utilities import Utilities
+from .pyromod import Pyromod
 
 
 class Methods(
@@ -43,7 +45,9 @@ class Methods(
     Stories,
     Messages,
     Decorators,
+    Stickers,
     Utilities,
     InviteLinks,
+    Pyromod
 ):
     pass

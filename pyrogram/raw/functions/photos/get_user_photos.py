@@ -34,7 +34,7 @@ class GetUserPhotos(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``91CD32A8``
 
     Parameters:

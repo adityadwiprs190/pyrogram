@@ -36,7 +36,7 @@ class InputWallPaper(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputWallPaper`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E630B979``
 
     Parameters:

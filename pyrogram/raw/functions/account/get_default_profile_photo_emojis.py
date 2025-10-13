@@ -34,7 +34,7 @@ class GetDefaultProfilePhotoEmojis(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E2750328``
 
     Parameters:

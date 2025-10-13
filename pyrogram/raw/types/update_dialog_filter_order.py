@@ -36,7 +36,7 @@ class UpdateDialogFilterOrder(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Update`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A5D72105``
 
     Parameters:

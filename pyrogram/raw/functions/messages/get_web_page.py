@@ -34,7 +34,7 @@ class GetWebPage(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``8D9692A3``
 
     Parameters:

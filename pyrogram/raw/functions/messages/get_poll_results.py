@@ -34,7 +34,7 @@ class GetPollResults(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``73BB643B``
 
     Parameters:

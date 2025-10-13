@@ -34,7 +34,7 @@ class SearchGlobal(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``4BC6589A``
 
     Parameters:
@@ -62,6 +62,9 @@ class SearchGlobal(TLObject):  # type: ignore
         limit (``int`` ``32-bit``):
             N/A
 
+        broadcasts_only (``bool``, *optional*):
+            N/A
+
         folder_id (``int`` ``32-bit``, *optional*):
             N/A
 
@@ -69,12 +72,12 @@ class SearchGlobal(TLObject):  # type: ignore
         :obj:`messages.Messages <pyrogram.raw.base.messages.Messages>`
     """
 
-    __slots__: List[str] = ["q", "filter", "min_date", "max_date", "offset_rate", "offset_peer", "offset_id", "limit", "folder_id"]
+    __slots__: List[str] = ["q", "filter", "min_date", "max_date", "offset_rate", "offset_peer", "offset_id", "limit", "broadcasts_only", "folder_id"]
 
     ID = 0x4bc6589a
     QUALNAME = "functions.messages.SearchGlobal"
 
-    def __init__(self, *, q: str, filter: "raw.base.MessagesFilter", min_date: int, max_date: int, offset_rate: int, offset_peer: "raw.base.InputPeer", offset_id: int, limit: int, folder_id: Optional[int] = None) -> None:
+    def __init__(self, *, q: str, filter: "raw.base.MessagesFilter", min_date: int, max_date: int, offset_rate: int, offset_peer: "raw.base.InputPeer", offset_id: int, limit: int, broadcasts_only: Optional[bool] = None, folder_id: Optional[int] = None) -> None:
         self.q = q  # string
         self.filter = filter  # MessagesFilter
         self.min_date = min_date  # int
@@ -83,6 +86,7 @@ class SearchGlobal(TLObject):  # type: ignore
         self.offset_peer = offset_peer  # InputPeer
         self.offset_id = offset_id  # int
         self.limit = limit  # int
+        self.broadcasts_only = broadcasts_only  # flags.1?true
         self.folder_id = folder_id  # flags.0?int
 
     @staticmethod
@@ -90,6 +94,7 @@ class SearchGlobal(TLObject):  # type: ignore
         
         flags = Int.read(b)
         
+        broadcasts_only = True if flags & (1 << 1) else False
         folder_id = Int.read(b) if flags & (1 << 0) else None
         q = String.read(b)
         
@@ -107,13 +112,14 @@ class SearchGlobal(TLObject):  # type: ignore
         
         limit = Int.read(b)
         
-        return SearchGlobal(q=q, filter=filter, min_date=min_date, max_date=max_date, offset_rate=offset_rate, offset_peer=offset_peer, offset_id=offset_id, limit=limit, folder_id=folder_id)
+        return SearchGlobal(q=q, filter=filter, min_date=min_date, max_date=max_date, offset_rate=offset_rate, offset_peer=offset_peer, offset_id=offset_id, limit=limit, broadcasts_only=broadcasts_only, folder_id=folder_id)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
         b.write(Int(self.ID, False))
 
         flags = 0
+        flags |= (1 << 1) if self.broadcasts_only else 0
         flags |= (1 << 0) if self.folder_id is not None else 0
         b.write(Int(flags))
         

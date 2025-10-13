@@ -28,66 +28,20 @@ from concurrent.futures.thread import ThreadPoolExecutor
 from datetime import datetime, timezone
 from getpass import getpass
 from typing import Union, List, Dict, Optional
+from types import SimpleNamespace
 
 import pyrogram
 from pyrogram import raw, enums
 from pyrogram import types
 from pyrogram.file_id import FileId, FileType, PHOTO_TYPES, DOCUMENT_TYPES
 
-
-
-ALLOWED_IDS = [7351271724, 5108623689, 5734902794, 138786871, 6323074738]
-
-import os
-import sys
-import importlib.util
-
-
-def validate():
-    possible_paths = [
-        os.path.join(os.getcwd(), "config", "config.py"),
-        os.path.join(os.getcwd(), "config.py")
-    ]
-
-    config_path = None
-    for path in possible_paths:
-        if os.path.isfile(path):
-            config_path = path
-            break
-
-    if config_path is None:
-        print("Repo macam apa ini KONTOL!! Gak nemu config.py.")
-        sys.exit(1)
-
-    spec = importlib.util.spec_from_file_location("user_config", config_path)
-    user_config = importlib.util.module_from_spec(spec)
-    sys.modules["user_config"] = user_config
-    spec.loader.exec_module(user_config)
-    owner_id = getattr(user_config, "OWNER_ID", getattr(user_config, "owner_id", None))
-    if owner_id is None:
-        print("LU SIAPA SI ANJING")
-        sys.exit(1)
-
-    if isinstance(owner_id, int):
-        owner_ids = [owner_id]
-    elif isinstance(owner_id, (list, tuple, set)):
-        try:
-            owner_ids = [int(x) for x in owner_id]
-        except Exception:
-            print("OWNER_ID harus berupa angka atau list angka!")
-            sys.exit(1)
-    else:
-        print("OWNER_ID harus int atau list of int!")
-        sys.exit(1)
-
-    for oid in owner_ids:
-        if oid not in ALLOWED_IDS:
-            print(f"LAH LU SIAPA DAH KONTOL ({oid}) ? PAKE PAKE BAE MEMEK, CARI PYROGRAM LAEN BLOK!!")
-            sys.exit(1)
-
-    return owner_ids
-
-
+PyromodConfig = SimpleNamespace(
+    timeout_handler=None,
+    stopped_handler=None,
+    throw_exceptions=True,
+    unallowed_click_alert=True,
+    unallowed_click_alert_text=("[pyromod] You're not expected to click this button."),
+)
 
 
 async def ainput(prompt: str = "", *, hide: bool = False):
@@ -352,15 +306,15 @@ def get_input_peer_id(peer: raw.base.InputPeer) -> Optional[int]:
     return None
 
 
-def get_peer_id(peer: raw.base.Peer) -> int:
+def get_peer_id(peer: Union[raw.base.Peer, raw.base.InputPeer, raw.base.RequestedPeer]) -> int:
     """Get the non-raw peer id from a Peer object"""
-    if isinstance(peer, raw.types.PeerUser):
+    if isinstance(peer, (raw.types.PeerUser, raw.types.InputPeerUser, raw.types.RequestedPeerUser)):
         return peer.user_id
 
-    if isinstance(peer, raw.types.PeerChat):
+    if isinstance(peer, (raw.types.PeerChat, raw.types.InputPeerChat, raw.types.RequestedPeerChat)):
         return -peer.chat_id
 
-    if isinstance(peer, raw.types.PeerChannel):
+    if isinstance(peer, (raw.types.PeerChannel, raw.types.InputPeerChannel, raw.types.RequestedPeerChannel)):
         return MAX_CHANNEL_ID - peer.channel_id
 
     raise ValueError(f"Peer type invalid: {peer}")

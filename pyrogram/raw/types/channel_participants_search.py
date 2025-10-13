@@ -36,7 +36,7 @@ class ChannelParticipantsSearch(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.ChannelParticipantsFilter`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``656AC4B``
 
     Parameters:

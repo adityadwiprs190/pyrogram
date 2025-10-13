@@ -34,8 +34,8 @@ class SendMedia(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
-        - ID: ``72CCC23D``
+        - Layer: ``182``
+        - ID: ``7852834E``
 
     Parameters:
         peer (:obj:`InputPeer <pyrogram.raw.base.InputPeer>`):
@@ -83,16 +83,22 @@ class SendMedia(TLObject):  # type: ignore
         send_as (:obj:`InputPeer <pyrogram.raw.base.InputPeer>`, *optional*):
             N/A
 
+        quick_reply_shortcut (:obj:`InputQuickReplyShortcut <pyrogram.raw.base.InputQuickReplyShortcut>`, *optional*):
+            N/A
+
+        effect (``int`` ``64-bit``, *optional*):
+            N/A
+
     Returns:
         :obj:`Updates <pyrogram.raw.base.Updates>`
     """
 
-    __slots__: List[str] = ["peer", "media", "message", "random_id", "silent", "background", "clear_draft", "noforwards", "update_stickersets_order", "invert_media", "reply_to", "reply_markup", "entities", "schedule_date", "send_as"]
+    __slots__: List[str] = ["peer", "media", "message", "random_id", "silent", "background", "clear_draft", "noforwards", "update_stickersets_order", "invert_media", "reply_to", "reply_markup", "entities", "schedule_date", "send_as", "quick_reply_shortcut", "effect"]
 
-    ID = 0x72ccc23d
+    ID = 0x7852834e
     QUALNAME = "functions.messages.SendMedia"
 
-    def __init__(self, *, peer: "raw.base.InputPeer", media: "raw.base.InputMedia", message: str, random_id: int, silent: Optional[bool] = None, background: Optional[bool] = None, clear_draft: Optional[bool] = None, noforwards: Optional[bool] = None, update_stickersets_order: Optional[bool] = None, invert_media: Optional[bool] = None, reply_to: "raw.base.InputReplyTo" = None, reply_markup: "raw.base.ReplyMarkup" = None, entities: Optional[List["raw.base.MessageEntity"]] = None, schedule_date: Optional[int] = None, send_as: "raw.base.InputPeer" = None) -> None:
+    def __init__(self, *, peer: "raw.base.InputPeer", media: "raw.base.InputMedia", message: str, random_id: int, silent: Optional[bool] = None, background: Optional[bool] = None, clear_draft: Optional[bool] = None, noforwards: Optional[bool] = None, update_stickersets_order: Optional[bool] = None, invert_media: Optional[bool] = None, reply_to: "raw.base.InputReplyTo" = None, reply_markup: "raw.base.ReplyMarkup" = None, entities: Optional[List["raw.base.MessageEntity"]] = None, schedule_date: Optional[int] = None, send_as: "raw.base.InputPeer" = None, quick_reply_shortcut: "raw.base.InputQuickReplyShortcut" = None, effect: Optional[int] = None) -> None:
         self.peer = peer  # InputPeer
         self.media = media  # InputMedia
         self.message = message  # string
@@ -108,6 +114,8 @@ class SendMedia(TLObject):  # type: ignore
         self.entities = entities  # flags.3?Vector<MessageEntity>
         self.schedule_date = schedule_date  # flags.10?int
         self.send_as = send_as  # flags.13?InputPeer
+        self.quick_reply_shortcut = quick_reply_shortcut  # flags.17?InputQuickReplyShortcut
+        self.effect = effect  # flags.18?long
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "SendMedia":
@@ -137,7 +145,10 @@ class SendMedia(TLObject):  # type: ignore
         schedule_date = Int.read(b) if flags & (1 << 10) else None
         send_as = TLObject.read(b) if flags & (1 << 13) else None
         
-        return SendMedia(peer=peer, media=media, message=message, random_id=random_id, silent=silent, background=background, clear_draft=clear_draft, noforwards=noforwards, update_stickersets_order=update_stickersets_order, invert_media=invert_media, reply_to=reply_to, reply_markup=reply_markup, entities=entities, schedule_date=schedule_date, send_as=send_as)
+        quick_reply_shortcut = TLObject.read(b) if flags & (1 << 17) else None
+        
+        effect = Long.read(b) if flags & (1 << 18) else None
+        return SendMedia(peer=peer, media=media, message=message, random_id=random_id, silent=silent, background=background, clear_draft=clear_draft, noforwards=noforwards, update_stickersets_order=update_stickersets_order, invert_media=invert_media, reply_to=reply_to, reply_markup=reply_markup, entities=entities, schedule_date=schedule_date, send_as=send_as, quick_reply_shortcut=quick_reply_shortcut, effect=effect)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -155,6 +166,8 @@ class SendMedia(TLObject):  # type: ignore
         flags |= (1 << 3) if self.entities else 0
         flags |= (1 << 10) if self.schedule_date is not None else 0
         flags |= (1 << 13) if self.send_as is not None else 0
+        flags |= (1 << 17) if self.quick_reply_shortcut is not None else 0
+        flags |= (1 << 18) if self.effect is not None else 0
         b.write(Int(flags))
         
         b.write(self.peer.write())
@@ -179,5 +192,11 @@ class SendMedia(TLObject):  # type: ignore
         
         if self.send_as is not None:
             b.write(self.send_as.write())
+        
+        if self.quick_reply_shortcut is not None:
+            b.write(self.quick_reply_shortcut.write())
+        
+        if self.effect is not None:
+            b.write(Long(self.effect))
         
         return b.getvalue()

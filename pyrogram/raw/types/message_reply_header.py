@@ -36,8 +36,8 @@ class MessageReplyHeader(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageReplyHeader`.
 
     Details:
-        - Layer: ``166``
-        - ID: ``6EEBCABD``
+        - Layer: ``182``
+        - ID: ``AFBC09DB``
 
     Parameters:
         reply_to_scheduled (``bool``, *optional*):
@@ -70,14 +70,17 @@ class MessageReplyHeader(TLObject):  # type: ignore
         quote_entities (List of :obj:`MessageEntity <pyrogram.raw.base.MessageEntity>`, *optional*):
             N/A
 
+        quote_offset (``int`` ``32-bit``, *optional*):
+            N/A
+
     """
 
-    __slots__: List[str] = ["reply_to_scheduled", "forum_topic", "quote", "reply_to_msg_id", "reply_to_peer_id", "reply_from", "reply_media", "reply_to_top_id", "quote_text", "quote_entities"]
+    __slots__: List[str] = ["reply_to_scheduled", "forum_topic", "quote", "reply_to_msg_id", "reply_to_peer_id", "reply_from", "reply_media", "reply_to_top_id", "quote_text", "quote_entities", "quote_offset"]
 
-    ID = 0x6eebcabd
+    ID = 0xafbc09db
     QUALNAME = "types.MessageReplyHeader"
 
-    def __init__(self, *, reply_to_scheduled: Optional[bool] = None, forum_topic: Optional[bool] = None, quote: Optional[bool] = None, reply_to_msg_id: Optional[int] = None, reply_to_peer_id: "raw.base.Peer" = None, reply_from: "raw.base.MessageFwdHeader" = None, reply_media: "raw.base.MessageMedia" = None, reply_to_top_id: Optional[int] = None, quote_text: Optional[str] = None, quote_entities: Optional[List["raw.base.MessageEntity"]] = None) -> None:
+    def __init__(self, *, reply_to_scheduled: Optional[bool] = None, forum_topic: Optional[bool] = None, quote: Optional[bool] = None, reply_to_msg_id: Optional[int] = None, reply_to_peer_id: "raw.base.Peer" = None, reply_from: "raw.base.MessageFwdHeader" = None, reply_media: "raw.base.MessageMedia" = None, reply_to_top_id: Optional[int] = None, quote_text: Optional[str] = None, quote_entities: Optional[List["raw.base.MessageEntity"]] = None, quote_offset: Optional[int] = None) -> None:
         self.reply_to_scheduled = reply_to_scheduled  # flags.2?true
         self.forum_topic = forum_topic  # flags.3?true
         self.quote = quote  # flags.9?true
@@ -88,6 +91,7 @@ class MessageReplyHeader(TLObject):  # type: ignore
         self.reply_to_top_id = reply_to_top_id  # flags.1?int
         self.quote_text = quote_text  # flags.6?string
         self.quote_entities = quote_entities  # flags.7?Vector<MessageEntity>
+        self.quote_offset = quote_offset  # flags.10?int
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "MessageReplyHeader":
@@ -108,7 +112,8 @@ class MessageReplyHeader(TLObject):  # type: ignore
         quote_text = String.read(b) if flags & (1 << 6) else None
         quote_entities = TLObject.read(b) if flags & (1 << 7) else []
         
-        return MessageReplyHeader(reply_to_scheduled=reply_to_scheduled, forum_topic=forum_topic, quote=quote, reply_to_msg_id=reply_to_msg_id, reply_to_peer_id=reply_to_peer_id, reply_from=reply_from, reply_media=reply_media, reply_to_top_id=reply_to_top_id, quote_text=quote_text, quote_entities=quote_entities)
+        quote_offset = Int.read(b) if flags & (1 << 10) else None
+        return MessageReplyHeader(reply_to_scheduled=reply_to_scheduled, forum_topic=forum_topic, quote=quote, reply_to_msg_id=reply_to_msg_id, reply_to_peer_id=reply_to_peer_id, reply_from=reply_from, reply_media=reply_media, reply_to_top_id=reply_to_top_id, quote_text=quote_text, quote_entities=quote_entities, quote_offset=quote_offset)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -125,6 +130,7 @@ class MessageReplyHeader(TLObject):  # type: ignore
         flags |= (1 << 1) if self.reply_to_top_id is not None else 0
         flags |= (1 << 6) if self.quote_text is not None else 0
         flags |= (1 << 7) if self.quote_entities else 0
+        flags |= (1 << 10) if self.quote_offset is not None else 0
         b.write(Int(flags))
         
         if self.reply_to_msg_id is not None:
@@ -147,5 +153,8 @@ class MessageReplyHeader(TLObject):  # type: ignore
         
         if self.quote_entities is not None:
             b.write(Vector(self.quote_entities))
+        
+        if self.quote_offset is not None:
+            b.write(Int(self.quote_offset))
         
         return b.getvalue()

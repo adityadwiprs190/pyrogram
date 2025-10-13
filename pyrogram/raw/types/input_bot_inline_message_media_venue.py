@@ -36,7 +36,7 @@ class InputBotInlineMessageMediaVenue(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputBotInlineMessage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``417BBF11``
 
     Parameters:

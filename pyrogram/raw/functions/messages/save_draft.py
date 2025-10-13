@@ -34,8 +34,8 @@ class SaveDraft(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
-        - ID: ``7FF3B806``
+        - Layer: ``182``
+        - ID: ``D372C5CE``
 
     Parameters:
         peer (:obj:`InputPeer <pyrogram.raw.base.InputPeer>`):
@@ -59,16 +59,19 @@ class SaveDraft(TLObject):  # type: ignore
         media (:obj:`InputMedia <pyrogram.raw.base.InputMedia>`, *optional*):
             N/A
 
+        effect (``int`` ``64-bit``, *optional*):
+            N/A
+
     Returns:
         ``bool``
     """
 
-    __slots__: List[str] = ["peer", "message", "no_webpage", "invert_media", "reply_to", "entities", "media"]
+    __slots__: List[str] = ["peer", "message", "no_webpage", "invert_media", "reply_to", "entities", "media", "effect"]
 
-    ID = 0x7ff3b806
+    ID = 0xd372c5ce
     QUALNAME = "functions.messages.SaveDraft"
 
-    def __init__(self, *, peer: "raw.base.InputPeer", message: str, no_webpage: Optional[bool] = None, invert_media: Optional[bool] = None, reply_to: "raw.base.InputReplyTo" = None, entities: Optional[List["raw.base.MessageEntity"]] = None, media: "raw.base.InputMedia" = None) -> None:
+    def __init__(self, *, peer: "raw.base.InputPeer", message: str, no_webpage: Optional[bool] = None, invert_media: Optional[bool] = None, reply_to: "raw.base.InputReplyTo" = None, entities: Optional[List["raw.base.MessageEntity"]] = None, media: "raw.base.InputMedia" = None, effect: Optional[int] = None) -> None:
         self.peer = peer  # InputPeer
         self.message = message  # string
         self.no_webpage = no_webpage  # flags.1?true
@@ -76,6 +79,7 @@ class SaveDraft(TLObject):  # type: ignore
         self.reply_to = reply_to  # flags.4?InputReplyTo
         self.entities = entities  # flags.3?Vector<MessageEntity>
         self.media = media  # flags.5?InputMedia
+        self.effect = effect  # flags.7?long
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "SaveDraft":
@@ -94,7 +98,8 @@ class SaveDraft(TLObject):  # type: ignore
         
         media = TLObject.read(b) if flags & (1 << 5) else None
         
-        return SaveDraft(peer=peer, message=message, no_webpage=no_webpage, invert_media=invert_media, reply_to=reply_to, entities=entities, media=media)
+        effect = Long.read(b) if flags & (1 << 7) else None
+        return SaveDraft(peer=peer, message=message, no_webpage=no_webpage, invert_media=invert_media, reply_to=reply_to, entities=entities, media=media, effect=effect)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -106,6 +111,7 @@ class SaveDraft(TLObject):  # type: ignore
         flags |= (1 << 4) if self.reply_to is not None else 0
         flags |= (1 << 3) if self.entities else 0
         flags |= (1 << 5) if self.media is not None else 0
+        flags |= (1 << 7) if self.effect is not None else 0
         b.write(Int(flags))
         
         if self.reply_to is not None:
@@ -120,5 +126,8 @@ class SaveDraft(TLObject):  # type: ignore
         
         if self.media is not None:
             b.write(self.media.write())
+        
+        if self.effect is not None:
+            b.write(Long(self.effect))
         
         return b.getvalue()

@@ -36,7 +36,7 @@ class MediaAreaSuggestedReaction(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MediaArea`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``14455871``
 
     Parameters:

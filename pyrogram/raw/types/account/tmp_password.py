@@ -36,7 +36,7 @@ class TmpPassword(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.account.TmpPassword`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``DB64FD34``
 
     Parameters:

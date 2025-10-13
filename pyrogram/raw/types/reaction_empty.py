@@ -36,7 +36,7 @@ class ReactionEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Reaction`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``79F5D419``
 
     Parameters:

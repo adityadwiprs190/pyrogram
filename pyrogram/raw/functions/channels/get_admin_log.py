@@ -34,7 +34,7 @@ class GetAdminLog(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``33DDF480``
 
     Parameters:

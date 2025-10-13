@@ -93,3 +93,15 @@ from .emoji_groups import EmojiGroups
 from .translate_result import TranslateResult
 from .bot_app import BotApp
 from .web_page import WebPage
+from .saved_dialogs import SavedDialogs
+from .saved_dialogs_slice import SavedDialogsSlice
+from .saved_dialogs_not_modified import SavedDialogsNotModified
+from .saved_reaction_tags_not_modified import SavedReactionTagsNotModified
+from .saved_reaction_tags import SavedReactionTags
+from .quick_replies import QuickReplies
+from .quick_replies_not_modified import QuickRepliesNotModified
+from .dialog_filters import DialogFilters
+from .my_stickers import MyStickers
+from .invited_users import InvitedUsers
+from .available_effects_not_modified import AvailableEffectsNotModified
+from .available_effects import AvailableEffects

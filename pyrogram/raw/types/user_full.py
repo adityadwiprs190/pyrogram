@@ -36,8 +36,8 @@ class UserFull(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.UserFull`.
 
     Details:
-        - Layer: ``166``
-        - ID: ``B9B12C6C``
+        - Layer: ``182``
+        - ID: ``CC997720``
 
     Parameters:
         id (``int`` ``64-bit``):
@@ -80,6 +80,18 @@ class UserFull(TLObject):  # type: ignore
             N/A
 
         blocked_my_stories_from (``bool``, *optional*):
+            N/A
+
+        wallpaper_overridden (``bool``, *optional*):
+            N/A
+
+        contact_require_premium (``bool``, *optional*):
+            N/A
+
+        read_dates_private (``bool``, *optional*):
+            N/A
+
+        sponsored_enabled (``bool``, *optional*):
             N/A
 
         about (``str``, *optional*):
@@ -127,14 +139,38 @@ class UserFull(TLObject):  # type: ignore
         stories (:obj:`PeerStories <pyrogram.raw.base.PeerStories>`, *optional*):
             N/A
 
+        business_work_hours (:obj:`BusinessWorkHours <pyrogram.raw.base.BusinessWorkHours>`, *optional*):
+            N/A
+
+        business_location (:obj:`BusinessLocation <pyrogram.raw.base.BusinessLocation>`, *optional*):
+            N/A
+
+        business_greeting_message (:obj:`BusinessGreetingMessage <pyrogram.raw.base.BusinessGreetingMessage>`, *optional*):
+            N/A
+
+        business_away_message (:obj:`BusinessAwayMessage <pyrogram.raw.base.BusinessAwayMessage>`, *optional*):
+            N/A
+
+        business_intro (:obj:`BusinessIntro <pyrogram.raw.base.BusinessIntro>`, *optional*):
+            N/A
+
+        birthday (:obj:`Birthday <pyrogram.raw.base.Birthday>`, *optional*):
+            N/A
+
+        personal_channel_id (``int`` ``64-bit``, *optional*):
+            N/A
+
+        personal_channel_message (``int`` ``32-bit``, *optional*):
+            N/A
+
     """
 
-    __slots__: List[str] = ["id", "settings", "notify_settings", "common_chats_count", "blocked", "phone_calls_available", "phone_calls_private", "can_pin_message", "has_scheduled", "video_calls_available", "voice_messages_forbidden", "translations_disabled", "stories_pinned_available", "blocked_my_stories_from", "about", "personal_photo", "profile_photo", "fallback_photo", "bot_info", "pinned_msg_id", "folder_id", "ttl_period", "theme_emoticon", "private_forward_name", "bot_group_admin_rights", "bot_broadcast_admin_rights", "premium_gifts", "wallpaper", "stories"]
+    __slots__: List[str] = ["id", "settings", "notify_settings", "common_chats_count", "blocked", "phone_calls_available", "phone_calls_private", "can_pin_message", "has_scheduled", "video_calls_available", "voice_messages_forbidden", "translations_disabled", "stories_pinned_available", "blocked_my_stories_from", "wallpaper_overridden", "contact_require_premium", "read_dates_private", "sponsored_enabled", "about", "personal_photo", "profile_photo", "fallback_photo", "bot_info", "pinned_msg_id", "folder_id", "ttl_period", "theme_emoticon", "private_forward_name", "bot_group_admin_rights", "bot_broadcast_admin_rights", "premium_gifts", "wallpaper", "stories", "business_work_hours", "business_location", "business_greeting_message", "business_away_message", "business_intro", "birthday", "personal_channel_id", "personal_channel_message"]
 
-    ID = 0xb9b12c6c
+    ID = 0xcc997720
     QUALNAME = "types.UserFull"
 
-    def __init__(self, *, id: int, settings: "raw.base.PeerSettings", notify_settings: "raw.base.PeerNotifySettings", common_chats_count: int, blocked: Optional[bool] = None, phone_calls_available: Optional[bool] = None, phone_calls_private: Optional[bool] = None, can_pin_message: Optional[bool] = None, has_scheduled: Optional[bool] = None, video_calls_available: Optional[bool] = None, voice_messages_forbidden: Optional[bool] = None, translations_disabled: Optional[bool] = None, stories_pinned_available: Optional[bool] = None, blocked_my_stories_from: Optional[bool] = None, about: Optional[str] = None, personal_photo: "raw.base.Photo" = None, profile_photo: "raw.base.Photo" = None, fallback_photo: "raw.base.Photo" = None, bot_info: "raw.base.BotInfo" = None, pinned_msg_id: Optional[int] = None, folder_id: Optional[int] = None, ttl_period: Optional[int] = None, theme_emoticon: Optional[str] = None, private_forward_name: Optional[str] = None, bot_group_admin_rights: "raw.base.ChatAdminRights" = None, bot_broadcast_admin_rights: "raw.base.ChatAdminRights" = None, premium_gifts: Optional[List["raw.base.PremiumGiftOption"]] = None, wallpaper: "raw.base.WallPaper" = None, stories: "raw.base.PeerStories" = None) -> None:
+    def __init__(self, *, id: int, settings: "raw.base.PeerSettings", notify_settings: "raw.base.PeerNotifySettings", common_chats_count: int, blocked: Optional[bool] = None, phone_calls_available: Optional[bool] = None, phone_calls_private: Optional[bool] = None, can_pin_message: Optional[bool] = None, has_scheduled: Optional[bool] = None, video_calls_available: Optional[bool] = None, voice_messages_forbidden: Optional[bool] = None, translations_disabled: Optional[bool] = None, stories_pinned_available: Optional[bool] = None, blocked_my_stories_from: Optional[bool] = None, wallpaper_overridden: Optional[bool] = None, contact_require_premium: Optional[bool] = None, read_dates_private: Optional[bool] = None, sponsored_enabled: Optional[bool] = None, about: Optional[str] = None, personal_photo: "raw.base.Photo" = None, profile_photo: "raw.base.Photo" = None, fallback_photo: "raw.base.Photo" = None, bot_info: "raw.base.BotInfo" = None, pinned_msg_id: Optional[int] = None, folder_id: Optional[int] = None, ttl_period: Optional[int] = None, theme_emoticon: Optional[str] = None, private_forward_name: Optional[str] = None, bot_group_admin_rights: "raw.base.ChatAdminRights" = None, bot_broadcast_admin_rights: "raw.base.ChatAdminRights" = None, premium_gifts: Optional[List["raw.base.PremiumGiftOption"]] = None, wallpaper: "raw.base.WallPaper" = None, stories: "raw.base.PeerStories" = None, business_work_hours: "raw.base.BusinessWorkHours" = None, business_location: "raw.base.BusinessLocation" = None, business_greeting_message: "raw.base.BusinessGreetingMessage" = None, business_away_message: "raw.base.BusinessAwayMessage" = None, business_intro: "raw.base.BusinessIntro" = None, birthday: "raw.base.Birthday" = None, personal_channel_id: Optional[int] = None, personal_channel_message: Optional[int] = None) -> None:
         self.id = id  # long
         self.settings = settings  # PeerSettings
         self.notify_settings = notify_settings  # PeerNotifySettings
@@ -149,6 +185,10 @@ class UserFull(TLObject):  # type: ignore
         self.translations_disabled = translations_disabled  # flags.23?true
         self.stories_pinned_available = stories_pinned_available  # flags.26?true
         self.blocked_my_stories_from = blocked_my_stories_from  # flags.27?true
+        self.wallpaper_overridden = wallpaper_overridden  # flags.28?true
+        self.contact_require_premium = contact_require_premium  # flags.29?true
+        self.read_dates_private = read_dates_private  # flags.30?true
+        self.sponsored_enabled = sponsored_enabled  # flags2.7?true
         self.about = about  # flags.1?string
         self.personal_photo = personal_photo  # flags.21?Photo
         self.profile_photo = profile_photo  # flags.2?Photo
@@ -164,6 +204,14 @@ class UserFull(TLObject):  # type: ignore
         self.premium_gifts = premium_gifts  # flags.19?Vector<PremiumGiftOption>
         self.wallpaper = wallpaper  # flags.24?WallPaper
         self.stories = stories  # flags.25?PeerStories
+        self.business_work_hours = business_work_hours  # flags2.0?BusinessWorkHours
+        self.business_location = business_location  # flags2.1?BusinessLocation
+        self.business_greeting_message = business_greeting_message  # flags2.2?BusinessGreetingMessage
+        self.business_away_message = business_away_message  # flags2.3?BusinessAwayMessage
+        self.business_intro = business_intro  # flags2.4?BusinessIntro
+        self.birthday = birthday  # flags2.5?Birthday
+        self.personal_channel_id = personal_channel_id  # flags2.6?long
+        self.personal_channel_message = personal_channel_message  # flags2.6?int
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "UserFull":
@@ -180,6 +228,12 @@ class UserFull(TLObject):  # type: ignore
         translations_disabled = True if flags & (1 << 23) else False
         stories_pinned_available = True if flags & (1 << 26) else False
         blocked_my_stories_from = True if flags & (1 << 27) else False
+        wallpaper_overridden = True if flags & (1 << 28) else False
+        contact_require_premium = True if flags & (1 << 29) else False
+        read_dates_private = True if flags & (1 << 30) else False
+        flags2 = Int.read(b)
+        
+        sponsored_enabled = True if flags2 & (1 << 7) else False
         id = Long.read(b)
         
         about = String.read(b) if flags & (1 << 1) else None
@@ -212,7 +266,21 @@ class UserFull(TLObject):  # type: ignore
         
         stories = TLObject.read(b) if flags & (1 << 25) else None
         
-        return UserFull(id=id, settings=settings, notify_settings=notify_settings, common_chats_count=common_chats_count, blocked=blocked, phone_calls_available=phone_calls_available, phone_calls_private=phone_calls_private, can_pin_message=can_pin_message, has_scheduled=has_scheduled, video_calls_available=video_calls_available, voice_messages_forbidden=voice_messages_forbidden, translations_disabled=translations_disabled, stories_pinned_available=stories_pinned_available, blocked_my_stories_from=blocked_my_stories_from, about=about, personal_photo=personal_photo, profile_photo=profile_photo, fallback_photo=fallback_photo, bot_info=bot_info, pinned_msg_id=pinned_msg_id, folder_id=folder_id, ttl_period=ttl_period, theme_emoticon=theme_emoticon, private_forward_name=private_forward_name, bot_group_admin_rights=bot_group_admin_rights, bot_broadcast_admin_rights=bot_broadcast_admin_rights, premium_gifts=premium_gifts, wallpaper=wallpaper, stories=stories)
+        business_work_hours = TLObject.read(b) if flags2 & (1 << 0) else None
+        
+        business_location = TLObject.read(b) if flags2 & (1 << 1) else None
+        
+        business_greeting_message = TLObject.read(b) if flags2 & (1 << 2) else None
+        
+        business_away_message = TLObject.read(b) if flags2 & (1 << 3) else None
+        
+        business_intro = TLObject.read(b) if flags2 & (1 << 4) else None
+        
+        birthday = TLObject.read(b) if flags2 & (1 << 5) else None
+        
+        personal_channel_id = Long.read(b) if flags2 & (1 << 6) else None
+        personal_channel_message = Int.read(b) if flags2 & (1 << 6) else None
+        return UserFull(id=id, settings=settings, notify_settings=notify_settings, common_chats_count=common_chats_count, blocked=blocked, phone_calls_available=phone_calls_available, phone_calls_private=phone_calls_private, can_pin_message=can_pin_message, has_scheduled=has_scheduled, video_calls_available=video_calls_available, voice_messages_forbidden=voice_messages_forbidden, translations_disabled=translations_disabled, stories_pinned_available=stories_pinned_available, blocked_my_stories_from=blocked_my_stories_from, wallpaper_overridden=wallpaper_overridden, contact_require_premium=contact_require_premium, read_dates_private=read_dates_private, sponsored_enabled=sponsored_enabled, about=about, personal_photo=personal_photo, profile_photo=profile_photo, fallback_photo=fallback_photo, bot_info=bot_info, pinned_msg_id=pinned_msg_id, folder_id=folder_id, ttl_period=ttl_period, theme_emoticon=theme_emoticon, private_forward_name=private_forward_name, bot_group_admin_rights=bot_group_admin_rights, bot_broadcast_admin_rights=bot_broadcast_admin_rights, premium_gifts=premium_gifts, wallpaper=wallpaper, stories=stories, business_work_hours=business_work_hours, business_location=business_location, business_greeting_message=business_greeting_message, business_away_message=business_away_message, business_intro=business_intro, birthday=birthday, personal_channel_id=personal_channel_id, personal_channel_message=personal_channel_message)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -229,6 +297,9 @@ class UserFull(TLObject):  # type: ignore
         flags |= (1 << 23) if self.translations_disabled else 0
         flags |= (1 << 26) if self.stories_pinned_available else 0
         flags |= (1 << 27) if self.blocked_my_stories_from else 0
+        flags |= (1 << 28) if self.wallpaper_overridden else 0
+        flags |= (1 << 29) if self.contact_require_premium else 0
+        flags |= (1 << 30) if self.read_dates_private else 0
         flags |= (1 << 1) if self.about is not None else 0
         flags |= (1 << 21) if self.personal_photo is not None else 0
         flags |= (1 << 2) if self.profile_photo is not None else 0
@@ -245,6 +316,17 @@ class UserFull(TLObject):  # type: ignore
         flags |= (1 << 24) if self.wallpaper is not None else 0
         flags |= (1 << 25) if self.stories is not None else 0
         b.write(Int(flags))
+        flags2 = 0
+        flags2 |= (1 << 7) if self.sponsored_enabled else 0
+        flags2 |= (1 << 0) if self.business_work_hours is not None else 0
+        flags2 |= (1 << 1) if self.business_location is not None else 0
+        flags2 |= (1 << 2) if self.business_greeting_message is not None else 0
+        flags2 |= (1 << 3) if self.business_away_message is not None else 0
+        flags2 |= (1 << 4) if self.business_intro is not None else 0
+        flags2 |= (1 << 5) if self.birthday is not None else 0
+        flags2 |= (1 << 6) if self.personal_channel_id is not None else 0
+        flags2 |= (1 << 6) if self.personal_channel_message is not None else 0
+        b.write(Int(flags2))
         
         b.write(Long(self.id))
         
@@ -298,5 +380,29 @@ class UserFull(TLObject):  # type: ignore
         
         if self.stories is not None:
             b.write(self.stories.write())
+        
+        if self.business_work_hours is not None:
+            b.write(self.business_work_hours.write())
+        
+        if self.business_location is not None:
+            b.write(self.business_location.write())
+        
+        if self.business_greeting_message is not None:
+            b.write(self.business_greeting_message.write())
+        
+        if self.business_away_message is not None:
+            b.write(self.business_away_message.write())
+        
+        if self.business_intro is not None:
+            b.write(self.business_intro.write())
+        
+        if self.birthday is not None:
+            b.write(self.birthday.write())
+        
+        if self.personal_channel_id is not None:
+            b.write(Long(self.personal_channel_id))
+        
+        if self.personal_channel_message is not None:
+            b.write(Int(self.personal_channel_message))
         
         return b.getvalue()

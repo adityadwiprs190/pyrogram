@@ -36,7 +36,7 @@ class InputPrivacyKeyPhoneNumber(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputPrivacyKey`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``352DAFA``
 
     Parameters:

@@ -36,7 +36,7 @@ class TextUrl(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.RichText`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``3C2884C1``
 
     Parameters:

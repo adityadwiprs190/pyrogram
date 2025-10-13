@@ -36,7 +36,7 @@ class InputChannelFromMessage(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputChannel`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``5B934F9D``
 
     Parameters:

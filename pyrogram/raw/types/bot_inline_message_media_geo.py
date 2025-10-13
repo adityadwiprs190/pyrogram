@@ -36,7 +36,7 @@ class BotInlineMessageMediaGeo(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.BotInlineMessage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``51846FD``
 
     Parameters:

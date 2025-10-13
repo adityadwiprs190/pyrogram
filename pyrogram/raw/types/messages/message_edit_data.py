@@ -36,7 +36,7 @@ class MessageEditData(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.MessageEditData`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``26B5DDE6``
 
     Parameters:

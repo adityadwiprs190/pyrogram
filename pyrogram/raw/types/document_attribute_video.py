@@ -36,7 +36,7 @@ class DocumentAttributeVideo(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.DocumentAttribute`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``D38FF1C2``
 
     Parameters:

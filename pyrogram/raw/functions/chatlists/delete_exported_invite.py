@@ -34,7 +34,7 @@ class DeleteExportedInvite(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``719C5C5E``
 
     Parameters:

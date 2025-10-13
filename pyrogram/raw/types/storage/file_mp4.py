@@ -36,7 +36,7 @@ class FileMp4(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.storage.FileType`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B3CEA0E4``
 
     Parameters:

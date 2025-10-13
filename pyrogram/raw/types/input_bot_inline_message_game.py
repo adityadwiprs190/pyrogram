@@ -36,7 +36,7 @@ class InputBotInlineMessageGame(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputBotInlineMessage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``4B425864``
 
     Parameters:

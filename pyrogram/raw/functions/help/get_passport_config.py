@@ -34,7 +34,7 @@ class GetPassportConfig(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``C661AD08``
 
     Parameters:

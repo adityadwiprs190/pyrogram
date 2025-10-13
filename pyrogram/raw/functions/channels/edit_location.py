@@ -34,7 +34,7 @@ class EditLocation(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``58E63F6D``
 
     Parameters:

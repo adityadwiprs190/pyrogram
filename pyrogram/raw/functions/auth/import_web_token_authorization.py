@@ -34,7 +34,7 @@ class ImportWebTokenAuthorization(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``2DB873A9``
 
     Parameters:

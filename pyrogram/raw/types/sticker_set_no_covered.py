@@ -36,7 +36,7 @@ class StickerSetNoCovered(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.StickerSetCovered`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``77B15D1C``
 
     Parameters:

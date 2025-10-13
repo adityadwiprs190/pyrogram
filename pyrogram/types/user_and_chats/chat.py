@@ -20,10 +20,9 @@ from datetime import datetime
 from typing import Union, List, Optional, AsyncGenerator, BinaryIO
 
 import pyrogram
-from pyrogram import raw, enums
-from pyrogram import types
-from pyrogram import utils
+from pyrogram import raw, enums, types, utils
 from ..object import Object
+from ..pyromod import ListenerTypes
 
 
 class Chat(Object):
@@ -154,8 +153,25 @@ class Chat(Object):
             Available reactions in the chat.
             Returned only in :meth:`~pyrogram.Client.get_chat`.
 
-        color (``int``, *optional*)
-            Chat color.
+        level (``int``, *optional*):
+            Channel boosts level.
+            For channel only.
+
+        reply_color (:obj:`~pyrogram.types.ChatColor`, *optional*):
+            Chat reply color.
+
+        profile_color (:obj:`~pyrogram.types.ChatColor`, *optional*):
+            Chat profile color.
+
+        personal_chat (:obj:`~pyrogram.types.Chat`, *optional*):
+            For private chats, the personal channel of the user.
+            Returned only in :meth:`~pyrogram.Client.get_chat`.
+
+        max_reaction_count (``int``):
+            The maximum number of reactions that can be set on a message in the chat
+
+        gifts_count (``int``, *optional*):
+            Number of gifts received by the user.
 
         background_emoji_id (``int``, *optional*)
             Chat background emoji id.
@@ -203,8 +219,9 @@ class Chat(Object):
         linked_chat: "types.Chat" = None,
         send_as_chat: "types.Chat" = None,
         available_reactions: Optional["types.ChatReactions"] = None,
-        color: int = None,
-        background_emoji_id: int = None,
+        reply_color: "types.ChatColor" = None,
+        profile_color: "types.ChatColor" = None,
+        personal_chat: "types.Chat" = None,
         birthday: "types.Birthday" = None
     ):
         super().__init__(client)
@@ -244,12 +261,19 @@ class Chat(Object):
         self.linked_chat = linked_chat
         self.send_as_chat = send_as_chat
         self.available_reactions = available_reactions
-        self.color = color
-        self.background_emoji_id = background_emoji_id
+        self.personal_chat = personal_chat
+        self.reply_color = reply_color
+        self.profile_color = profile_color
         self.birthday = birthday
+
+    @property
+    def full_name(self) -> str:
+        return " ".join(filter(None, [self.first_name, self.last_name])) or None
 
     @staticmethod
     def _parse_user_chat(client, user: raw.types.User) -> "Chat":
+        if user is None or isinstance(user, raw.types.UserEmpty):
+            return None
         peer_id = user.id
 
         return Chat(
@@ -267,13 +291,15 @@ class Chat(Object):
             photo=types.ChatPhoto._parse(client, user.photo, peer_id, user.access_hash),
             restrictions=types.List([types.Restriction._parse(r) for r in user.restriction_reason]) or None,
             dc_id=getattr(getattr(user, "photo", None), "dc_id", None),
-            color=getattr(user, "color", None),
-            background_emoji_id=getattr(user, "background_emoji_id", None),
+            reply_color=types.ChatColor._parse(getattr(user, "color", None)),
+            profile_color=types.ChatColor._parse_profile_color(getattr(user, "profile_color", None)),
             client=client
         )
 
     @staticmethod
     def _parse_chat_chat(client, chat: raw.types.Chat) -> "Chat":
+        if chat is None or isinstance(chat, raw.types.ChatEmpty):
+            return None
         peer_id = -chat.id
         usernames = getattr(chat, "usernames", [])
         admin_rights = getattr(chat, "admin_rights", None)
@@ -296,6 +322,8 @@ class Chat(Object):
 
     @staticmethod
     def _parse_channel_chat(client, channel: raw.types.Channel) -> "Chat":
+        if channel is None:
+            return None
         peer_id = utils.get_channel_id(channel.id)
         restriction_reason = getattr(channel, "restriction_reason", [])
         usernames = getattr(channel, "usernames", [])
@@ -323,8 +351,7 @@ class Chat(Object):
             members_count=getattr(channel, "participants_count", None),
             dc_id=getattr(getattr(channel, "photo", None), "dc_id", None),
             has_protected_content=getattr(channel, "noforwards", None),
-            color=getattr(channel, "color", None),
-            background_emoji_id=getattr(channel, "background_emoji_id", None),
+            reply_color=types.ChatColor._parse(getattr(channel, "color", None)),
             client=client
         )
 
@@ -343,10 +370,11 @@ class Chat(Object):
         if isinstance(message.peer_id, raw.types.PeerUser):
             return Chat._parse_user_chat(client, users[chat_id])
 
-        if isinstance(message.peer_id, raw.types.PeerChat):
+        elif isinstance(message.peer_id, raw.types.PeerChat):
             return Chat._parse_chat_chat(client, chats[chat_id])
-
-        return Chat._parse_channel_chat(client, chats[chat_id])
+        else:
+            return Chat._parse_channel_chat(client, chats[chat_id])
+        
 
     @staticmethod
     def _parse_dialog(client, peer, users: dict, chats: dict):
@@ -428,10 +456,187 @@ class Chat(Object):
             return Chat._parse_user_chat(client, chat)
         else:
             return Chat._parse_channel_chat(client, chat)
+        
+    def listen(
+        self,
+        filters: None,
+        listener_type: ListenerTypes = ListenerTypes.MESSAGE,
+        timeout: int | None = None,
+        unallowed_click_alert: bool = True,
+        user_id: int | str | list[int | str] | None = None,
+        message_id: int | list[int] | None = None,
+        inline_message_id: str | list[str] | None = None,
+    ):
+        """
+        Bound method *listen* of :obj:`~pyrogram.types.Chat`.
 
-    @property
-    def full_name(self) -> str:
-        return " ".join(filter(None, [self.first_name, self.last_name])) or None
+        Use as a shortcut for:
+
+        .. code-block:: python
+
+            await client.listen(chat_id=chat_id)
+
+        Example:
+            .. code-block:: python
+
+                await chat.listen()
+
+        Parameters:
+            filters (``Optional[filters.Filter]``):
+                A filter to check if the listener should be fulfilled.
+
+            listener_type (``ListenerTypes``):
+                The type of listener to create. Defaults to :attr:`pyrogram.types.ListenerTypes.MESSAGE`.
+
+            timeout (``Optional[int]``):
+                The maximum amount of time to wait for the listener to be fulfilled. Defaults to ``None``.
+
+            unallowed_click_alert (``bool``):
+                Whether to alert the user if they click on a button that is not intended for them. Defaults to ``True``.
+
+            user_id (``Optional[Union[int, str], List[Union[int, str]]]``):
+                The user ID(s) to listen for. Defaults to ``None``.
+
+            message_id (``Optional[Union[int, List[int]]]``):
+                The message ID(s) to listen for. Defaults to ``None``.
+
+            inline_message_id (``Optional[Union[str, List[str]]]``):
+                The inline message ID(s) to listen for. Defaults to ``None``.
+
+        Returns:
+            Union[:obj:`~pyrogram.types.Message`, :obj:`~pyrogram.types.CallbackQuery`]: The Message or CallbackQuery
+        """
+        return self._client.listen(
+            chat_id=self.id,
+            filters=filters,
+            listener_type=listener_type,
+            timeout=timeout,
+            unallowed_click_alert=unallowed_click_alert,
+            user_id=user_id,
+            message_id=message_id,
+            inline_message_id=inline_message_id,
+        )
+
+    def ask(
+        self,
+        text: str,
+        filters: None,
+        listener_type: ListenerTypes = ListenerTypes.MESSAGE,
+        timeout: int | None = None,
+        unallowed_click_alert: bool = True,
+        user_id: int | str | list[int | str] | None = None,
+        message_id: int | list[int] | None = None,
+        inline_message_id: str | list[str] | None = None,
+        *args,
+        **kwargs,
+    ):
+        """
+        Bound method *ask* of :obj:`~pyrogram.types.Chat`.
+
+        Use as a shortcut for:
+
+        .. code-block:: python
+
+            await client.ask(chat_id=chat_id, text=text)
+
+        Example:
+
+            .. code-block:: python
+
+                await chat.ask("What's your name?")
+
+        Parameters:
+            text (``str``):
+                The text to send.
+
+            filters (``Optional[filters.Filter]``):
+                Same as :meth:`pyrogram.Client.listen`.
+
+            listener_type (``ListenerTypes``):
+                Same as :meth:`pyrogram.Client.listen`.
+
+            timeout (``Optional[int]``):
+                Same as :meth:`pyrogram.Client.listen`.
+
+            unallowed_click_alert (``bool``):
+                Same as :meth:`pyrogram.Client.listen`.
+
+            user_id (``Optional[Union[int, str], List[Union[int, str]]]``):
+                The user ID(s) to listen for. Defaults to ``None``.
+
+            message_id (``Optional[Union[int, List[int]]]``):
+                The message ID(s) to listen for. Defaults to ``None``.
+
+            inline_message_id (``Optional[Union[str, List[str]]]``):
+                The inline message ID(s) to listen for. Defaults to ``None``.
+
+            args (``Any``):
+                Additional arguments to pass to :meth:`pyrogram.Client.send_message`.
+
+            kwargs (``Any``):
+                Additional keyword arguments to pass to :meth:`pyrogram.Client.send_message`.
+
+        Returns:
+            Union[:obj:`~pyrogram.types.Message`, :obj:`~pyrogram.types.CallbackQuery`]: The Message or CallbackQuery
+        """
+        return self._client.ask(
+            chat_id=self.id,
+            text=text,
+            filters=filters,
+            listener_type=listener_type,
+            timeout=timeout,
+            unallowed_click_alert=unallowed_click_alert,
+            user_id=user_id,
+            message_id=message_id,
+            inline_message_id=inline_message_id,
+            *args,
+            **kwargs,
+        )
+
+    def stop_listening(
+        self,
+        listener_type: ListenerTypes = ListenerTypes.MESSAGE,
+        user_id: int | str | list[int | str] | None = None,
+        message_id: int | list[int] | None = None,
+        inline_message_id: str | list[str] | None = None,
+    ):
+        """
+        Bound method *stop_listening* of :obj:`~pyrogram.types.Chat`.
+
+        Use as a shortcut for:
+
+        .. code-block:: python
+
+            await client.stop_listening(chat_id=chat_id)
+
+        Example:
+            .. code-block:: python
+
+                await chat.stop_listening()
+
+        Parameters:
+            listener_type (``ListenerTypes``):
+                The type of listener to stop listening for. Defaults to :attr:`pyrogram.types.ListenerTypes.MESSAGE`.
+
+            user_id (``Optional[Union[int, str], List[Union[int, str]]]``):
+                The user ID(s) to stop listening for. Defaults to ``None``.
+
+            message_id (``Optional[Union[int, List[int]]]``):
+                The message ID(s) to stop listening for. Defaults to ``None``.
+
+            inline_message_id (``Optional[Union[str, List[str]]]``):
+                The inline message ID(s) to stop listening for. Defaults to ``None``.
+
+        Returns:
+            ``bool``: The return value of :meth:`pyrogram.Client.stop_listening`.
+        """
+        return self._client.stop_listening(
+            chat_id=self.id,
+            listener_type=listener_type,
+            user_id=user_id,
+            message_id=message_id,
+            inline_message_id=inline_message_id,
+        )
 
     async def archive(self):
         """Bound method *archive* of :obj:`~pyrogram.types.Chat`.

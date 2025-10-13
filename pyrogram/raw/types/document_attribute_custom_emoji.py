@@ -36,7 +36,7 @@ class DocumentAttributeCustomEmoji(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.DocumentAttribute`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``FD149899``
 
     Parameters:

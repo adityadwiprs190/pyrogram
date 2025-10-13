@@ -34,7 +34,7 @@ class SetSecureValueErrors(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``90C894B5``
 
     Parameters:

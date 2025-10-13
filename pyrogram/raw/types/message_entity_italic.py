@@ -36,7 +36,7 @@ class MessageEntityItalic(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageEntity`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``826F8B60``
 
     Parameters:

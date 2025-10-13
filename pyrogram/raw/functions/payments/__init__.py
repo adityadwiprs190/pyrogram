@@ -38,3 +38,10 @@ from .check_gift_code import CheckGiftCode
 from .apply_gift_code import ApplyGiftCode
 from .get_giveaway_info import GetGiveawayInfo
 from .launch_prepaid_giveaway import LaunchPrepaidGiveaway
+from .get_stars_topup_options import GetStarsTopupOptions
+from .get_stars_status import GetStarsStatus
+from .get_stars_transactions import GetStarsTransactions
+from .send_stars_form import SendStarsForm
+from .refund_stars_charge import RefundStarsCharge
+from .get_stars_revenue_stats import GetStarsRevenueStats
+from .get_stars_revenue_withdrawal_url import GetStarsRevenueWithdrawalUrl

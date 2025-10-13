@@ -36,7 +36,7 @@ class PhoneCallAccepted(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PhoneCall`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``3660C311``
 
     Parameters:

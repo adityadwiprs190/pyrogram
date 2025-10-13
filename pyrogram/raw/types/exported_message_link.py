@@ -36,7 +36,7 @@ class ExportedMessageLink(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.ExportedMessageLink`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``5DAB1AF4``
 
     Parameters:

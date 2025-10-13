@@ -26,7 +26,7 @@ from typing import Union
 from pyrogram import raw
 from pyrogram.raw.core import TLObject
 
-InputInvoice = Union[raw.types.InputInvoiceMessage, raw.types.InputInvoicePremiumGiftCode, raw.types.InputInvoiceSlug]
+InputInvoice = Union[raw.types.InputInvoiceMessage, raw.types.InputInvoicePremiumGiftCode, raw.types.InputInvoiceSlug, raw.types.InputInvoiceStars]
 
 
 # noinspection PyRedeclaration
@@ -34,7 +34,7 @@ class InputInvoice:  # type: ignore
     """Telegram API base type.
 
     Constructors:
-        This base type has 3 constructors available.
+        This base type has 4 constructors available.
 
         .. currentmodule:: pyrogram.raw.types
 
@@ -44,6 +44,7 @@ class InputInvoice:  # type: ignore
             InputInvoiceMessage
             InputInvoicePremiumGiftCode
             InputInvoiceSlug
+            InputInvoiceStars
     """
 
     QUALNAME = "pyrogram.raw.base.InputInvoice"

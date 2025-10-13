@@ -36,7 +36,7 @@ class AutoSaveSettings(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.account.AutoSaveSettings`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``4C3E069D``
 
     Parameters:

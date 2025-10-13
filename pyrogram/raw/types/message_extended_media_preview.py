@@ -36,7 +36,7 @@ class MessageExtendedMediaPreview(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageExtendedMedia`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``AD628CC8``
 
     Parameters:

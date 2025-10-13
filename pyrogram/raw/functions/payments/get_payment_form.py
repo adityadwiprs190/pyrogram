@@ -34,7 +34,7 @@ class GetPaymentForm(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``37148DBB``
 
     Parameters:

@@ -34,7 +34,7 @@ class AllowSendMessage(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``F132E3EF``
 
     Parameters:

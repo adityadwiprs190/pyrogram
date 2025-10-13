@@ -34,7 +34,7 @@ class SaveBigFilePart(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``DE7B673D``
 
     Parameters:

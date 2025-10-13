@@ -36,7 +36,7 @@ class MessageMediaInvoice(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageMedia`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``F6A548D3``
 
     Parameters:

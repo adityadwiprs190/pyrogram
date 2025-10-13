@@ -44,7 +44,7 @@ class AffectedHistory:  # type: ignore
             messages.AffectedHistory
 
     Functions:
-        This object can be returned by 6 functions.
+        This object can be returned by 7 functions.
 
         .. currentmodule:: pyrogram.raw.functions
 
@@ -55,6 +55,7 @@ class AffectedHistory:  # type: ignore
             messages.ReadMentions
             messages.UnpinAllMessages
             messages.ReadReactions
+            messages.DeleteSavedHistory
             channels.DeleteParticipantHistory
             channels.DeleteTopicHistory
     """

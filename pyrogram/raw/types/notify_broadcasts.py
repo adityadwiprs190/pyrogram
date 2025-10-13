@@ -36,7 +36,7 @@ class NotifyBroadcasts(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.NotifyPeer`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``D612E8EF``
 
     Parameters:

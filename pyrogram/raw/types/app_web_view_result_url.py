@@ -36,7 +36,7 @@ class AppWebViewResultUrl(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.AppWebViewResult`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``3C1B4F0D``
 
     Parameters:

@@ -79,3 +79,11 @@ from .report_anti_spam_false_positive import ReportAntiSpamFalsePositive
 from .toggle_participants_hidden import ToggleParticipantsHidden
 from .click_sponsored_message import ClickSponsoredMessage
 from .update_color import UpdateColor
+from .toggle_view_forum_as_messages import ToggleViewForumAsMessages
+from .get_channel_recommendations import GetChannelRecommendations
+from .update_emoji_status import UpdateEmojiStatus
+from .set_boosts_to_unblock_restrictions import SetBoostsToUnblockRestrictions
+from .set_emoji_stickers import SetEmojiStickers
+from .report_sponsored_message import ReportSponsoredMessage
+from .restrict_sponsored_messages import RestrictSponsoredMessages
+from .search_posts import SearchPosts

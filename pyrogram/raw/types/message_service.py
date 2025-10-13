@@ -36,7 +36,7 @@ class MessageService(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Message`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``2B085862``
 
     Parameters:

@@ -36,7 +36,7 @@ class InputMessagesFilterEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessagesFilter`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``57E2F66C``
 
     Parameters:

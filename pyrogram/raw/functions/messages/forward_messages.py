@@ -34,8 +34,8 @@ class ForwardMessages(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
-        - ID: ``C661BBC4``
+        - Layer: ``182``
+        - ID: ``D5039208``
 
     Parameters:
         from_peer (:obj:`InputPeer <pyrogram.raw.base.InputPeer>`):
@@ -77,16 +77,19 @@ class ForwardMessages(TLObject):  # type: ignore
         send_as (:obj:`InputPeer <pyrogram.raw.base.InputPeer>`, *optional*):
             N/A
 
+        quick_reply_shortcut (:obj:`InputQuickReplyShortcut <pyrogram.raw.base.InputQuickReplyShortcut>`, *optional*):
+            N/A
+
     Returns:
         :obj:`Updates <pyrogram.raw.base.Updates>`
     """
 
-    __slots__: List[str] = ["from_peer", "id", "random_id", "to_peer", "silent", "background", "with_my_score", "drop_author", "drop_media_captions", "noforwards", "top_msg_id", "schedule_date", "send_as"]
+    __slots__: List[str] = ["from_peer", "id", "random_id", "to_peer", "silent", "background", "with_my_score", "drop_author", "drop_media_captions", "noforwards", "top_msg_id", "schedule_date", "send_as", "quick_reply_shortcut"]
 
-    ID = 0xc661bbc4
+    ID = 0xd5039208
     QUALNAME = "functions.messages.ForwardMessages"
 
-    def __init__(self, *, from_peer: "raw.base.InputPeer", id: List[int], random_id: List[int], to_peer: "raw.base.InputPeer", silent: Optional[bool] = None, background: Optional[bool] = None, with_my_score: Optional[bool] = None, drop_author: Optional[bool] = None, drop_media_captions: Optional[bool] = None, noforwards: Optional[bool] = None, top_msg_id: Optional[int] = None, schedule_date: Optional[int] = None, send_as: "raw.base.InputPeer" = None) -> None:
+    def __init__(self, *, from_peer: "raw.base.InputPeer", id: List[int], random_id: List[int], to_peer: "raw.base.InputPeer", silent: Optional[bool] = None, background: Optional[bool] = None, with_my_score: Optional[bool] = None, drop_author: Optional[bool] = None, drop_media_captions: Optional[bool] = None, noforwards: Optional[bool] = None, top_msg_id: Optional[int] = None, schedule_date: Optional[int] = None, send_as: "raw.base.InputPeer" = None, quick_reply_shortcut: "raw.base.InputQuickReplyShortcut" = None) -> None:
         self.from_peer = from_peer  # InputPeer
         self.id = id  # Vector<int>
         self.random_id = random_id  # Vector<long>
@@ -100,6 +103,7 @@ class ForwardMessages(TLObject):  # type: ignore
         self.top_msg_id = top_msg_id  # flags.9?int
         self.schedule_date = schedule_date  # flags.10?int
         self.send_as = send_as  # flags.13?InputPeer
+        self.quick_reply_shortcut = quick_reply_shortcut  # flags.17?InputQuickReplyShortcut
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "ForwardMessages":
@@ -124,7 +128,9 @@ class ForwardMessages(TLObject):  # type: ignore
         schedule_date = Int.read(b) if flags & (1 << 10) else None
         send_as = TLObject.read(b) if flags & (1 << 13) else None
         
-        return ForwardMessages(from_peer=from_peer, id=id, random_id=random_id, to_peer=to_peer, silent=silent, background=background, with_my_score=with_my_score, drop_author=drop_author, drop_media_captions=drop_media_captions, noforwards=noforwards, top_msg_id=top_msg_id, schedule_date=schedule_date, send_as=send_as)
+        quick_reply_shortcut = TLObject.read(b) if flags & (1 << 17) else None
+        
+        return ForwardMessages(from_peer=from_peer, id=id, random_id=random_id, to_peer=to_peer, silent=silent, background=background, with_my_score=with_my_score, drop_author=drop_author, drop_media_captions=drop_media_captions, noforwards=noforwards, top_msg_id=top_msg_id, schedule_date=schedule_date, send_as=send_as, quick_reply_shortcut=quick_reply_shortcut)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -140,6 +146,7 @@ class ForwardMessages(TLObject):  # type: ignore
         flags |= (1 << 9) if self.top_msg_id is not None else 0
         flags |= (1 << 10) if self.schedule_date is not None else 0
         flags |= (1 << 13) if self.send_as is not None else 0
+        flags |= (1 << 17) if self.quick_reply_shortcut is not None else 0
         b.write(Int(flags))
         
         b.write(self.from_peer.write())
@@ -158,5 +165,8 @@ class ForwardMessages(TLObject):  # type: ignore
         
         if self.send_as is not None:
             b.write(self.send_as.write())
+        
+        if self.quick_reply_shortcut is not None:
+            b.write(self.quick_reply_shortcut.write())
         
         return b.getvalue()

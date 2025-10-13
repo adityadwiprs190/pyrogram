@@ -34,7 +34,7 @@ class CheckShortName(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``284B3639``
 
     Parameters:

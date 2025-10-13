@@ -36,7 +36,7 @@ class FilePartial(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.storage.FileType`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``40BC6F52``
 
     Parameters:

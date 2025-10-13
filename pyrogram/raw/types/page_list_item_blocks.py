@@ -36,7 +36,7 @@ class PageListItemBlocks(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PageListItem`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``25E073FC``
 
     Parameters:

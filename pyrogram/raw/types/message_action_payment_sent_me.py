@@ -36,7 +36,7 @@ class MessageActionPaymentSentMe(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageAction`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``8F31B327``
 
     Parameters:

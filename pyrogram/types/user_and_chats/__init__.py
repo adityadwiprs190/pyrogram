@@ -16,8 +16,11 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
+
+from .bot_verification import BotVerification
 from .chat import Chat
 from .chat_admin_with_invite_links import ChatAdminWithInviteLinks
+from .chat_color import ChatColor
 from .chat_event import ChatEvent
 from .chat_event_filter import ChatEventFilter
 from .chat_invite_link import ChatInviteLink
@@ -39,19 +42,39 @@ from .peer_channel import PeerChannel
 from .peer_user import PeerUser
 from .user import User
 from .username import Username
+from .forum_topic import ForumTopic
+from .forum_topic_created import ForumTopicCreated
+from .forum_topic_closed import ForumTopicClosed
+from .forum_topic_deleted import ForumTopicDeleted
+from .forum_topic_reopened import ForumTopicReopened
+from .forum_topic_edited import ForumTopicEdited
+from .general_forum_topic_hidden import GeneralTopicHidden
+from .general_forum_topic_unhidden import GeneralTopicUnhidden
 from .video_chat_ended import VideoChatEnded
 from .video_chat_members_invited import VideoChatMembersInvited
 from .video_chat_scheduled import VideoChatScheduled
 from .video_chat_started import VideoChatStarted
 from .birthday import Birthday
+
+
 __all__ = [
+    "BotVerification",
     "Chat",
+    "ChatColor",
     "ChatMember",
     "ChatPermissions",
     "ChatPhoto",
     "ChatPreview",
     "Birthday",
     "Dialog",
+    "ForumTopic",
+    "ForumTopicCreated",
+    "ForumTopicClosed",
+    "ForumTopicDeleted",
+    "ForumTopicReopened",
+    "ForumTopicEdited",
+    "GeneralTopicHidden",
+    "GeneralTopicUnhidden",
     "PeerChannel",
     "PeerUser",
     "User",

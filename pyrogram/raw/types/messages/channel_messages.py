@@ -36,7 +36,7 @@ class ChannelMessages(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.Messages`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``C776BA4E``
 
     Parameters:
@@ -65,7 +65,7 @@ class ChannelMessages(TLObject):  # type: ignore
             N/A
 
     Functions:
-        This object can be returned by 13 functions.
+        This object can be returned by 15 functions.
 
         .. currentmodule:: pyrogram.raw.functions
 
@@ -83,8 +83,10 @@ class ChannelMessages(TLObject):  # type: ignore
             messages.GetReplies
             messages.GetUnreadReactions
             messages.SearchSentMedia
+            messages.GetSavedHistory
+            messages.GetQuickReplyMessages
             channels.GetMessages
-            stats.GetMessagePublicForwards
+            channels.SearchPosts
     """
 
     __slots__: List[str] = ["pts", "count", "messages", "topics", "chats", "users", "inexact", "offset_id_offset"]

@@ -26,7 +26,7 @@ from typing import Union
 from pyrogram import raw
 from pyrogram.raw.core import TLObject
 
-MessageAction = Union[raw.types.MessageActionBotAllowed, raw.types.MessageActionChannelCreate, raw.types.MessageActionChannelMigrateFrom, raw.types.MessageActionChatAddUser, raw.types.MessageActionChatCreate, raw.types.MessageActionChatDeletePhoto, raw.types.MessageActionChatDeleteUser, raw.types.MessageActionChatEditPhoto, raw.types.MessageActionChatEditTitle, raw.types.MessageActionChatJoinedByLink, raw.types.MessageActionChatJoinedByRequest, raw.types.MessageActionChatMigrateTo, raw.types.MessageActionContactSignUp, raw.types.MessageActionCustomAction, raw.types.MessageActionEmpty, raw.types.MessageActionGameScore, raw.types.MessageActionGeoProximityReached, raw.types.MessageActionGiftCode, raw.types.MessageActionGiftPremium, raw.types.MessageActionGiveawayLaunch, raw.types.MessageActionGroupCall, raw.types.MessageActionGroupCallScheduled, raw.types.MessageActionHistoryClear, raw.types.MessageActionInviteToGroupCall, raw.types.MessageActionPaymentSent, raw.types.MessageActionPaymentSentMe, raw.types.MessageActionPhoneCall, raw.types.MessageActionPinMessage, raw.types.MessageActionRequestedPeer, raw.types.MessageActionScreenshotTaken, raw.types.MessageActionSecureValuesSent, raw.types.MessageActionSecureValuesSentMe, raw.types.MessageActionSetChatTheme, raw.types.MessageActionSetChatWallPaper, raw.types.MessageActionSetMessagesTTL, raw.types.MessageActionSetSameChatWallPaper, raw.types.MessageActionSuggestProfilePhoto, raw.types.MessageActionTopicCreate, raw.types.MessageActionTopicEdit, raw.types.MessageActionWebViewDataSent, raw.types.MessageActionWebViewDataSentMe]
+MessageAction = Union[raw.types.MessageActionBoostApply, raw.types.MessageActionBotAllowed, raw.types.MessageActionChannelCreate, raw.types.MessageActionChannelMigrateFrom, raw.types.MessageActionChatAddUser, raw.types.MessageActionChatCreate, raw.types.MessageActionChatDeletePhoto, raw.types.MessageActionChatDeleteUser, raw.types.MessageActionChatEditPhoto, raw.types.MessageActionChatEditTitle, raw.types.MessageActionChatJoinedByLink, raw.types.MessageActionChatJoinedByRequest, raw.types.MessageActionChatMigrateTo, raw.types.MessageActionContactSignUp, raw.types.MessageActionCustomAction, raw.types.MessageActionEmpty, raw.types.MessageActionGameScore, raw.types.MessageActionGeoProximityReached, raw.types.MessageActionGiftCode, raw.types.MessageActionGiftPremium, raw.types.MessageActionGiveawayLaunch, raw.types.MessageActionGiveawayResults, raw.types.MessageActionGroupCall, raw.types.MessageActionGroupCallScheduled, raw.types.MessageActionHistoryClear, raw.types.MessageActionInviteToGroupCall, raw.types.MessageActionPaymentSent, raw.types.MessageActionPaymentSentMe, raw.types.MessageActionPhoneCall, raw.types.MessageActionPinMessage, raw.types.MessageActionRequestedPeer, raw.types.MessageActionRequestedPeerSentMe, raw.types.MessageActionScreenshotTaken, raw.types.MessageActionSecureValuesSent, raw.types.MessageActionSecureValuesSentMe, raw.types.MessageActionSetChatTheme, raw.types.MessageActionSetChatWallPaper, raw.types.MessageActionSetMessagesTTL, raw.types.MessageActionSuggestProfilePhoto, raw.types.MessageActionTopicCreate, raw.types.MessageActionTopicEdit, raw.types.MessageActionWebViewDataSent, raw.types.MessageActionWebViewDataSentMe]
 
 
 # noinspection PyRedeclaration
@@ -34,13 +34,14 @@ class MessageAction:  # type: ignore
     """Telegram API base type.
 
     Constructors:
-        This base type has 41 constructors available.
+        This base type has 43 constructors available.
 
         .. currentmodule:: pyrogram.raw.types
 
         .. autosummary::
             :nosignatures:
 
+            MessageActionBoostApply
             MessageActionBotAllowed
             MessageActionChannelCreate
             MessageActionChannelMigrateFrom
@@ -61,6 +62,7 @@ class MessageAction:  # type: ignore
             MessageActionGiftCode
             MessageActionGiftPremium
             MessageActionGiveawayLaunch
+            MessageActionGiveawayResults
             MessageActionGroupCall
             MessageActionGroupCallScheduled
             MessageActionHistoryClear
@@ -70,13 +72,13 @@ class MessageAction:  # type: ignore
             MessageActionPhoneCall
             MessageActionPinMessage
             MessageActionRequestedPeer
+            MessageActionRequestedPeerSentMe
             MessageActionScreenshotTaken
             MessageActionSecureValuesSent
             MessageActionSecureValuesSentMe
             MessageActionSetChatTheme
             MessageActionSetChatWallPaper
             MessageActionSetMessagesTTL
-            MessageActionSetSameChatWallPaper
             MessageActionSuggestProfilePhoto
             MessageActionTopicCreate
             MessageActionTopicEdit

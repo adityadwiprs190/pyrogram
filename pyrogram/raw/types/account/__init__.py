@@ -50,3 +50,6 @@ from .emoji_statuses import EmojiStatuses
 from .email_verified import EmailVerified
 from .email_verified_login import EmailVerifiedLogin
 from .auto_save_settings import AutoSaveSettings
+from .connected_bots import ConnectedBots
+from .business_chat_links import BusinessChatLinks
+from .resolved_business_chat_links import ResolvedBusinessChatLinks

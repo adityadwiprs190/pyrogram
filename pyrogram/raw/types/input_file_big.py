@@ -36,7 +36,7 @@ class InputFileBig(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputFile`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``FA4F0BB5``
 
     Parameters:

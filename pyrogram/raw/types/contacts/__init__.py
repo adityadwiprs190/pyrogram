@@ -32,3 +32,4 @@ from .resolved_peer import ResolvedPeer
 from .top_peers_not_modified import TopPeersNotModified
 from .top_peers import TopPeers
 from .top_peers_disabled import TopPeersDisabled
+from .contact_birthdays import ContactBirthdays

@@ -36,7 +36,7 @@ class PrivacyKeyVoiceMessages(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PrivacyKey`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``697F414``
 
     Parameters:

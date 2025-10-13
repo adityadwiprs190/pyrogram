@@ -36,7 +36,7 @@ class UpdateGeoLiveViewed(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Update`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``871FB939``
 
     Parameters:

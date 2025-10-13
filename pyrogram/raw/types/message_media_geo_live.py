@@ -36,7 +36,7 @@ class MessageMediaGeoLive(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageMedia`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B940C666``
 
     Parameters:

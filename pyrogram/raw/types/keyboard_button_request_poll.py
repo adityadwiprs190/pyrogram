@@ -36,7 +36,7 @@ class KeyboardButtonRequestPoll(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.KeyboardButton`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``BBC7515D``
 
     Parameters:

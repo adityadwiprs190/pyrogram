@@ -34,7 +34,7 @@ class GetAppUpdate(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``522D5A7D``
 
     Parameters:

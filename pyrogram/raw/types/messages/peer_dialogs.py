@@ -36,7 +36,7 @@ class PeerDialogs(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.PeerDialogs`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``3371C354``
 
     Parameters:

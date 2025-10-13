@@ -36,7 +36,7 @@ class SimpleWebViewResultUrl(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.SimpleWebViewResult`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``882F76BB``
 
     Parameters:

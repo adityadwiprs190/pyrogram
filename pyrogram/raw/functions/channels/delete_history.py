@@ -34,7 +34,7 @@ class DeleteHistory(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``9BAA9647``
 
     Parameters:

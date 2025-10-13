@@ -36,7 +36,7 @@ class BoostsStatus(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.premium.BoostsStatus`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``4959427A``
 
     Parameters:

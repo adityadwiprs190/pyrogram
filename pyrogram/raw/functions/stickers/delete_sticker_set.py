@@ -34,7 +34,7 @@ class DeleteStickerSet(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``87704394``
 
     Parameters:

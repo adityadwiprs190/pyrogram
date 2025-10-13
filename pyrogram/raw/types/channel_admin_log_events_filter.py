@@ -36,7 +36,7 @@ class ChannelAdminLogEventsFilter(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.ChannelAdminLogEventsFilter`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``EA107AE4``
 
     Parameters:

@@ -36,7 +36,7 @@ class UpdateBotStopped(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Update`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``C4870A49``
 
     Parameters:

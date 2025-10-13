@@ -34,7 +34,7 @@ class Search(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``11F812D8``
 
     Parameters:

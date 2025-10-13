@@ -36,7 +36,7 @@ class SponsoredMessagesEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.SponsoredMessages`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``1839490F``
 
     Parameters:

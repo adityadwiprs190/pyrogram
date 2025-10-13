@@ -34,7 +34,7 @@ class SendEncryptedService(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``32D439A4``
 
     Parameters:

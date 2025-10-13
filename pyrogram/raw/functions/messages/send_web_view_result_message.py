@@ -34,7 +34,7 @@ class SendWebViewResultMessage(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A4314F5``
 
     Parameters:

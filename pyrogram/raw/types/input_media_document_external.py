@@ -36,7 +36,7 @@ class InputMediaDocumentExternal(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputMedia`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``FB52DC99``
 
     Parameters:

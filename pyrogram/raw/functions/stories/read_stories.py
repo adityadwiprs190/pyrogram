@@ -34,7 +34,7 @@ class ReadStories(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A556DAC8``
 
     Parameters:

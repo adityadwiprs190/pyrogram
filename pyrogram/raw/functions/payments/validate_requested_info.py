@@ -34,7 +34,7 @@ class ValidateRequestedInfo(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B6C8F12B``
 
     Parameters:

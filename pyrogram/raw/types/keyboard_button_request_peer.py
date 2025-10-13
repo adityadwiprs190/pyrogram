@@ -36,8 +36,8 @@ class KeyboardButtonRequestPeer(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.KeyboardButton`.
 
     Details:
-        - Layer: ``166``
-        - ID: ``D0B468C``
+        - Layer: ``182``
+        - ID: ``53D7BFD8``
 
     Parameters:
         text (``str``):
@@ -49,17 +49,21 @@ class KeyboardButtonRequestPeer(TLObject):  # type: ignore
         peer_type (:obj:`RequestPeerType <pyrogram.raw.base.RequestPeerType>`):
             N/A
 
+        max_quantity (``int`` ``32-bit``):
+            N/A
+
     """
 
-    __slots__: List[str] = ["text", "button_id", "peer_type"]
+    __slots__: List[str] = ["text", "button_id", "peer_type", "max_quantity"]
 
-    ID = 0xd0b468c
+    ID = 0x53d7bfd8
     QUALNAME = "types.KeyboardButtonRequestPeer"
 
-    def __init__(self, *, text: str, button_id: int, peer_type: "raw.base.RequestPeerType") -> None:
+    def __init__(self, *, text: str, button_id: int, peer_type: "raw.base.RequestPeerType", max_quantity: int) -> None:
         self.text = text  # string
         self.button_id = button_id  # int
         self.peer_type = peer_type  # RequestPeerType
+        self.max_quantity = max_quantity  # int
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "KeyboardButtonRequestPeer":
@@ -71,7 +75,9 @@ class KeyboardButtonRequestPeer(TLObject):  # type: ignore
         
         peer_type = TLObject.read(b)
         
-        return KeyboardButtonRequestPeer(text=text, button_id=button_id, peer_type=peer_type)
+        max_quantity = Int.read(b)
+        
+        return KeyboardButtonRequestPeer(text=text, button_id=button_id, peer_type=peer_type, max_quantity=max_quantity)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -84,5 +90,7 @@ class KeyboardButtonRequestPeer(TLObject):  # type: ignore
         b.write(Int(self.button_id))
         
         b.write(self.peer_type.write())
+        
+        b.write(Int(self.max_quantity))
         
         return b.getvalue()

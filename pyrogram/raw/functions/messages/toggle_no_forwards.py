@@ -34,7 +34,7 @@ class ToggleNoForwards(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B11EAFA2``
 
     Parameters:

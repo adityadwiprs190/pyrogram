@@ -36,7 +36,7 @@ class SecurePlainPhone(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.SecurePlainData`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``7D6099DD``
 
     Parameters:

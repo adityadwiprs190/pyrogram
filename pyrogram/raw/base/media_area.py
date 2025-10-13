@@ -26,7 +26,7 @@ from typing import Union
 from pyrogram import raw
 from pyrogram.raw.core import TLObject
 
-MediaArea = Union[raw.types.InputMediaAreaVenue, raw.types.MediaAreaGeoPoint, raw.types.MediaAreaSuggestedReaction, raw.types.MediaAreaVenue]
+MediaArea = Union[raw.types.InputMediaAreaChannelPost, raw.types.InputMediaAreaVenue, raw.types.MediaAreaChannelPost, raw.types.MediaAreaGeoPoint, raw.types.MediaAreaSuggestedReaction, raw.types.MediaAreaUrl, raw.types.MediaAreaVenue]
 
 
 # noinspection PyRedeclaration
@@ -34,16 +34,19 @@ class MediaArea:  # type: ignore
     """Telegram API base type.
 
     Constructors:
-        This base type has 4 constructors available.
+        This base type has 7 constructors available.
 
         .. currentmodule:: pyrogram.raw.types
 
         .. autosummary::
             :nosignatures:
 
+            InputMediaAreaChannelPost
             InputMediaAreaVenue
+            MediaAreaChannelPost
             MediaAreaGeoPoint
             MediaAreaSuggestedReaction
+            MediaAreaUrl
             MediaAreaVenue
     """
 

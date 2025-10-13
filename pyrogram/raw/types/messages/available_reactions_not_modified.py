@@ -36,7 +36,7 @@ class AvailableReactionsNotModified(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.AvailableReactions`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``9F071957``
 
     Parameters:

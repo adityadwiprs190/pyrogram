@@ -36,7 +36,7 @@ class SentEmailCode(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.account.SentEmailCode`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``811F854F``
 
     Parameters:

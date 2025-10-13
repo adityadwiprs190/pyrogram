@@ -36,7 +36,7 @@ class Boost(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Boost`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``2A1C8C71``
 
     Parameters:

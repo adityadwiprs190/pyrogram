@@ -34,7 +34,7 @@ class UpdatePinnedForumTopic(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``6C2D9026``
 
     Parameters:

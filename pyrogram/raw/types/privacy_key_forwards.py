@@ -36,7 +36,7 @@ class PrivacyKeyForwards(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PrivacyKey`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``69EC56A3``
 
     Parameters:

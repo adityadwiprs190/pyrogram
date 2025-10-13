@@ -34,7 +34,7 @@ class EditStory(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B583BA46``
 
     Parameters:

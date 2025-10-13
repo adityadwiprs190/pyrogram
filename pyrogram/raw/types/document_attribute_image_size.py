@@ -36,7 +36,7 @@ class DocumentAttributeImageSize(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.DocumentAttribute`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``6C37C15C``
 
     Parameters:

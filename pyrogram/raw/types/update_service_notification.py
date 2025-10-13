@@ -36,7 +36,7 @@ class UpdateServiceNotification(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Update`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``EBE46819``
 
     Parameters:

@@ -34,7 +34,7 @@ class ConfirmPasswordEmail(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``8FDF1920``
 
     Parameters:

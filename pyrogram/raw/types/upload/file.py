@@ -36,7 +36,7 @@ class File(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.upload.File`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``96A18D5``
 
     Parameters:

@@ -36,7 +36,7 @@ class ForumTopics(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.ForumTopics`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``367617D3``
 
     Parameters:

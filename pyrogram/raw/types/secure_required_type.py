@@ -36,7 +36,7 @@ class SecureRequiredType(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.SecureRequiredType`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``829D99DA``
 
     Parameters:

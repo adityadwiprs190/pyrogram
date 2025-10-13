@@ -36,7 +36,7 @@ class SentEncryptedMessage(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.SentEncryptedMessage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``560F8935``
 
     Parameters:

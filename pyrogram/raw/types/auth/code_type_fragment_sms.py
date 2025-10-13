@@ -36,7 +36,7 @@ class CodeTypeFragmentSms(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.auth.CodeType`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``6ED998C``
 
     Parameters:

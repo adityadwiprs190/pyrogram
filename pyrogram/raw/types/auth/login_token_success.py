@@ -36,7 +36,7 @@ class LoginTokenSuccess(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.auth.LoginToken`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``390D5C5E``
 
     Parameters:

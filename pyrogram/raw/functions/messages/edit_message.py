@@ -34,8 +34,8 @@ class EditMessage(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
-        - ID: ``48F71778``
+        - Layer: ``182``
+        - ID: ``DFD14005``
 
     Parameters:
         peer (:obj:`InputPeer <pyrogram.raw.base.InputPeer>`):
@@ -65,16 +65,19 @@ class EditMessage(TLObject):  # type: ignore
         schedule_date (``int`` ``32-bit``, *optional*):
             N/A
 
+        quick_reply_shortcut_id (``int`` ``32-bit``, *optional*):
+            N/A
+
     Returns:
         :obj:`Updates <pyrogram.raw.base.Updates>`
     """
 
-    __slots__: List[str] = ["peer", "id", "no_webpage", "invert_media", "message", "media", "reply_markup", "entities", "schedule_date"]
+    __slots__: List[str] = ["peer", "id", "no_webpage", "invert_media", "message", "media", "reply_markup", "entities", "schedule_date", "quick_reply_shortcut_id"]
 
-    ID = 0x48f71778
+    ID = 0xdfd14005
     QUALNAME = "functions.messages.EditMessage"
 
-    def __init__(self, *, peer: "raw.base.InputPeer", id: int, no_webpage: Optional[bool] = None, invert_media: Optional[bool] = None, message: Optional[str] = None, media: "raw.base.InputMedia" = None, reply_markup: "raw.base.ReplyMarkup" = None, entities: Optional[List["raw.base.MessageEntity"]] = None, schedule_date: Optional[int] = None) -> None:
+    def __init__(self, *, peer: "raw.base.InputPeer", id: int, no_webpage: Optional[bool] = None, invert_media: Optional[bool] = None, message: Optional[str] = None, media: "raw.base.InputMedia" = None, reply_markup: "raw.base.ReplyMarkup" = None, entities: Optional[List["raw.base.MessageEntity"]] = None, schedule_date: Optional[int] = None, quick_reply_shortcut_id: Optional[int] = None) -> None:
         self.peer = peer  # InputPeer
         self.id = id  # int
         self.no_webpage = no_webpage  # flags.1?true
@@ -84,6 +87,7 @@ class EditMessage(TLObject):  # type: ignore
         self.reply_markup = reply_markup  # flags.2?ReplyMarkup
         self.entities = entities  # flags.3?Vector<MessageEntity>
         self.schedule_date = schedule_date  # flags.15?int
+        self.quick_reply_shortcut_id = quick_reply_shortcut_id  # flags.17?int
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "EditMessage":
@@ -104,7 +108,8 @@ class EditMessage(TLObject):  # type: ignore
         entities = TLObject.read(b) if flags & (1 << 3) else []
         
         schedule_date = Int.read(b) if flags & (1 << 15) else None
-        return EditMessage(peer=peer, id=id, no_webpage=no_webpage, invert_media=invert_media, message=message, media=media, reply_markup=reply_markup, entities=entities, schedule_date=schedule_date)
+        quick_reply_shortcut_id = Int.read(b) if flags & (1 << 17) else None
+        return EditMessage(peer=peer, id=id, no_webpage=no_webpage, invert_media=invert_media, message=message, media=media, reply_markup=reply_markup, entities=entities, schedule_date=schedule_date, quick_reply_shortcut_id=quick_reply_shortcut_id)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -118,6 +123,7 @@ class EditMessage(TLObject):  # type: ignore
         flags |= (1 << 2) if self.reply_markup is not None else 0
         flags |= (1 << 3) if self.entities else 0
         flags |= (1 << 15) if self.schedule_date is not None else 0
+        flags |= (1 << 17) if self.quick_reply_shortcut_id is not None else 0
         b.write(Int(flags))
         
         b.write(self.peer.write())
@@ -138,5 +144,8 @@ class EditMessage(TLObject):  # type: ignore
         
         if self.schedule_date is not None:
             b.write(Int(self.schedule_date))
+        
+        if self.quick_reply_shortcut_id is not None:
+            b.write(Int(self.quick_reply_shortcut_id))
         
         return b.getvalue()

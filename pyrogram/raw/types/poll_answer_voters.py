@@ -36,7 +36,7 @@ class PollAnswerVoters(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PollAnswerVoters`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``3B6DDAD2``
 
     Parameters:

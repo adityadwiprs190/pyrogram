@@ -36,7 +36,7 @@ class GlobalPrivacySettings(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.GlobalPrivacySettings`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``734C4CCB``
 
     Parameters:
@@ -47,6 +47,12 @@ class GlobalPrivacySettings(TLObject):  # type: ignore
             N/A
 
         keep_archived_folders (``bool``, *optional*):
+            N/A
+
+        hide_read_marks (``bool``, *optional*):
+            N/A
+
+        new_noncontact_peers_require_premium (``bool``, *optional*):
             N/A
 
     Functions:
@@ -61,15 +67,17 @@ class GlobalPrivacySettings(TLObject):  # type: ignore
             account.SetGlobalPrivacySettings
     """
 
-    __slots__: List[str] = ["archive_and_mute_new_noncontact_peers", "keep_archived_unmuted", "keep_archived_folders"]
+    __slots__: List[str] = ["archive_and_mute_new_noncontact_peers", "keep_archived_unmuted", "keep_archived_folders", "hide_read_marks", "new_noncontact_peers_require_premium"]
 
     ID = 0x734c4ccb
     QUALNAME = "types.GlobalPrivacySettings"
 
-    def __init__(self, *, archive_and_mute_new_noncontact_peers: Optional[bool] = None, keep_archived_unmuted: Optional[bool] = None, keep_archived_folders: Optional[bool] = None) -> None:
+    def __init__(self, *, archive_and_mute_new_noncontact_peers: Optional[bool] = None, keep_archived_unmuted: Optional[bool] = None, keep_archived_folders: Optional[bool] = None, hide_read_marks: Optional[bool] = None, new_noncontact_peers_require_premium: Optional[bool] = None) -> None:
         self.archive_and_mute_new_noncontact_peers = archive_and_mute_new_noncontact_peers  # flags.0?true
         self.keep_archived_unmuted = keep_archived_unmuted  # flags.1?true
         self.keep_archived_folders = keep_archived_folders  # flags.2?true
+        self.hide_read_marks = hide_read_marks  # flags.3?true
+        self.new_noncontact_peers_require_premium = new_noncontact_peers_require_premium  # flags.4?true
 
     @staticmethod
     def read(b: BytesIO, *args: Any) -> "GlobalPrivacySettings":
@@ -79,7 +87,9 @@ class GlobalPrivacySettings(TLObject):  # type: ignore
         archive_and_mute_new_noncontact_peers = True if flags & (1 << 0) else False
         keep_archived_unmuted = True if flags & (1 << 1) else False
         keep_archived_folders = True if flags & (1 << 2) else False
-        return GlobalPrivacySettings(archive_and_mute_new_noncontact_peers=archive_and_mute_new_noncontact_peers, keep_archived_unmuted=keep_archived_unmuted, keep_archived_folders=keep_archived_folders)
+        hide_read_marks = True if flags & (1 << 3) else False
+        new_noncontact_peers_require_premium = True if flags & (1 << 4) else False
+        return GlobalPrivacySettings(archive_and_mute_new_noncontact_peers=archive_and_mute_new_noncontact_peers, keep_archived_unmuted=keep_archived_unmuted, keep_archived_folders=keep_archived_folders, hide_read_marks=hide_read_marks, new_noncontact_peers_require_premium=new_noncontact_peers_require_premium)
 
     def write(self, *args) -> bytes:
         b = BytesIO()
@@ -89,6 +99,8 @@ class GlobalPrivacySettings(TLObject):  # type: ignore
         flags |= (1 << 0) if self.archive_and_mute_new_noncontact_peers else 0
         flags |= (1 << 1) if self.keep_archived_unmuted else 0
         flags |= (1 << 2) if self.keep_archived_folders else 0
+        flags |= (1 << 3) if self.hide_read_marks else 0
+        flags |= (1 << 4) if self.new_noncontact_peers_require_premium else 0
         b.write(Int(flags))
         
         return b.getvalue()

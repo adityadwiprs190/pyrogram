@@ -36,7 +36,7 @@ class CheckedHistoryImportPeer(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.messages.CheckedHistoryImportPeer`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A24DE717``
 
     Parameters:

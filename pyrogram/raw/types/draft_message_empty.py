@@ -36,7 +36,7 @@ class DraftMessageEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.DraftMessage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``1B0C841A``
 
     Parameters:

@@ -36,7 +36,7 @@ class KeyboardButtonCallback(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.KeyboardButton`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``35BBDB6B``
 
     Parameters:

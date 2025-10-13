@@ -36,7 +36,7 @@ class KeyboardButtonCopy(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.KeyboardButton`.
 
     Details:
-        - Layer: ``195``
+        - Layer: ``182``
         - ID: ``75D2698E``
 
     Parameters:

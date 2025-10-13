@@ -36,7 +36,7 @@ class SecureFileEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.SecureFile`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``64199744``
 
     Parameters:

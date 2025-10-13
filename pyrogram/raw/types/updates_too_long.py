@@ -36,14 +36,14 @@ class UpdatesTooLong(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.Updates`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E317AF7E``
 
     Parameters:
         No parameters required.
 
     Functions:
-        This object can be returned by 96 functions.
+        This object can be returned by 103 functions.
 
         .. currentmodule:: pyrogram.raw.functions
 
@@ -51,6 +51,8 @@ class UpdatesTooLong(TLObject):  # type: ignore
             :nosignatures:
 
             account.GetNotifyExceptions
+            account.UpdateConnectedBot
+            account.GetBotBusinessConnection
             contacts.DeleteContacts
             contacts.AddContact
             contacts.AcceptContact
@@ -61,9 +63,7 @@ class UpdatesTooLong(TLObject):  # type: ignore
             messages.ForwardMessages
             messages.EditChatTitle
             messages.EditChatPhoto
-            messages.AddChatUser
             messages.DeleteChatUser
-            messages.CreateChat
             messages.ImportChatInvite
             messages.StartBot
             messages.MigrateChat
@@ -91,14 +91,16 @@ class UpdatesTooLong(TLObject):  # type: ignore
             messages.GetExtendedMedia
             messages.SendBotRequestedPeer
             messages.SetChatWallPaper
-            help.GetAppChangelog
+            messages.SendQuickReplyMessages
+            messages.DeleteQuickReplyMessages
+            messages.EditFactCheck
+            messages.DeleteFactCheck
             channels.CreateChannel
             channels.EditAdmin
             channels.EditTitle
             channels.EditPhoto
             channels.JoinChannel
             channels.LeaveChannel
-            channels.InviteToChannel
             channels.DeleteChannel
             channels.ToggleSignatures
             channels.EditBanned
@@ -117,11 +119,16 @@ class UpdatesTooLong(TLObject):  # type: ignore
             channels.ToggleAntiSpam
             channels.ToggleParticipantsHidden
             channels.UpdateColor
+            channels.ToggleViewForumAsMessages
+            channels.UpdateEmojiStatus
+            channels.SetBoostsToUnblockRestrictions
+            channels.RestrictSponsoredMessages
             bots.AllowSendMessage
             payments.AssignAppStoreTransaction
             payments.AssignPlayMarketTransaction
             payments.ApplyGiftCode
             payments.LaunchPrepaidGiveaway
+            payments.RefundStarsCharge
             phone.DiscardCall
             phone.SetCallRating
             phone.CreateGroupCall

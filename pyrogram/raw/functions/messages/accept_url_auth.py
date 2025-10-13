@@ -34,7 +34,7 @@ class AcceptUrlAuth(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B12C7125``
 
     Parameters:

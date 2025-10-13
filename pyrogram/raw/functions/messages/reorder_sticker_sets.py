@@ -34,7 +34,7 @@ class ReorderStickerSets(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``78337739``
 
     Parameters:

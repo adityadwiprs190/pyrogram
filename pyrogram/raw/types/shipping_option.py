@@ -36,7 +36,7 @@ class ShippingOption(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.ShippingOption`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B6213CDF``
 
     Parameters:

@@ -36,7 +36,7 @@ class InputStorePaymentPremiumGiftCode(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputStorePaymentPurpose`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A3805F3F``
 
     Parameters:

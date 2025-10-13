@@ -36,7 +36,7 @@ class InputMessageCallbackQuery(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputMessage`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``ACFA1A7E``
 
     Parameters:

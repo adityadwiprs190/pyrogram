@@ -36,7 +36,7 @@ class MessageMediaPoll(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.MessageMedia`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``4BD6E798``
 
     Parameters:

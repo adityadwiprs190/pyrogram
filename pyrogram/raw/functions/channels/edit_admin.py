@@ -34,7 +34,7 @@ class EditAdmin(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``D33C8902``
 
     Parameters:

@@ -34,7 +34,7 @@ class MarkDialogUnread(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``C286D98F``
 
     Parameters:

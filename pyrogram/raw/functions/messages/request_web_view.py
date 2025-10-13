@@ -34,7 +34,7 @@ class RequestWebView(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``269DC2C1``
 
     Parameters:

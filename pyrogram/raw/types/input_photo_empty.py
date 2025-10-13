@@ -36,7 +36,7 @@ class InputPhotoEmpty(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.InputPhoto`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``1CD7BF0D``
 
     Parameters:

@@ -34,7 +34,7 @@ class UnpinAllMessages(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``EE22B9A8``
 
     Parameters:

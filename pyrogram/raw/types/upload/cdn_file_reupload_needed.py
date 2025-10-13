@@ -36,7 +36,7 @@ class CdnFileReuploadNeeded(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.upload.CdnFile`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``EEA8E46E``
 
     Parameters:

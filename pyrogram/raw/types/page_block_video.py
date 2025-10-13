@@ -36,7 +36,7 @@ class PageBlockVideo(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.PageBlock`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``7C8FE7B6``
 
     Parameters:

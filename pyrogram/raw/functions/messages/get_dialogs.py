@@ -34,7 +34,7 @@ class GetDialogs(TLObject):  # type: ignore
     """Telegram API function.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``A0F4CB4F``
 
     Parameters:

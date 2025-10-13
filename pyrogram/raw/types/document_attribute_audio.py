@@ -36,7 +36,7 @@ class DocumentAttributeAudio(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.DocumentAttribute`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``9852F9C6``
 
     Parameters:

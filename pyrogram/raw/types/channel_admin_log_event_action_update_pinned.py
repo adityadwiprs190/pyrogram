@@ -36,7 +36,7 @@ class ChannelAdminLogEventActionUpdatePinned(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.ChannelAdminLogEventAction`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``E9E82C18``
 
     Parameters:

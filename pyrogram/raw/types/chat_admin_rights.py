@@ -36,7 +36,7 @@ class ChatAdminRights(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.ChatAdminRights`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``5FB224D5``
 
     Parameters:

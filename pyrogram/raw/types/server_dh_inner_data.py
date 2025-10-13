@@ -36,7 +36,7 @@ class ServerDHInnerData(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.ServerDHInnerData`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``B5890DBA``
 
     Parameters:

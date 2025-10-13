@@ -36,7 +36,7 @@ class ChatlistUpdates(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.chatlists.ChatlistUpdates`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``93BD878D``
 
     Parameters:

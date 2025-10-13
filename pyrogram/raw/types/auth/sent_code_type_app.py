@@ -36,7 +36,7 @@ class SentCodeTypeApp(TLObject):  # type: ignore
     Constructor of :obj:`~pyrogram.raw.base.auth.SentCodeType`.
 
     Details:
-        - Layer: ``166``
+        - Layer: ``182``
         - ID: ``3DBB5986``
 
     Parameters:
