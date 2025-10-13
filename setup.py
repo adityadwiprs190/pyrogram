@@ -38,13 +38,13 @@ if len(argv) > 1 and argv[1] in ["bdist_wheel", "install", "develop"]:
     errors_compiler.start()
 
 setup(
-    name="Nexgram",
+    name="pyrogram",
     version=version,
     description="Elegant, modern and asynchronous Telegram MTProto API framework in Python for users and bots",
     long_description=readme,
     long_description_content_type="text/markdown",
-    url="https://github.com/adityadwiprs190/pyrogram",
-    download_url="https://github.com/adityadwiprs190/pyrogram/releases/latest",
+    url="https://github.com/pyrogram/pyrogram",
+    download_url="https://github.com/yrogram/pyrogram/releases/latest",
     author="Dan",
     author_email="dan@pyrogram.org",
     license="LGPLv3",
@@ -83,7 +83,7 @@ setup(
     },
     python_requires="~=3.7",
     package_data={
-        "nexgram": ["py.typed"],
+        "pyrogram": ["py.typed"],
     },
     packages=find_packages(exclude=["compiler*", "tests*"]),
     zip_safe=False,
